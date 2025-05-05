@@ -42,7 +42,7 @@ export const Footer = () => {
                 <i class="fa fa-envelope" aria-hidden="true"></i>"Email para contato"
               </li>
             </ul>
-
+{/* aqui seria informações sobre as mídias sociais, não sei se será necessário. */}
             <div class="social-media">
               <a href="#">
                 <i class="fab fa-instagram"></i>
@@ -56,9 +56,8 @@ export const Footer = () => {
             </div>
           </div>
         </div>
-
-        <div class="footer-bottom">Copyright &copy; Pulsares Eólica 2025</div>
       </div>
+      <div class="footer-bottom">Copyright &copy; Pulsares Eólica 2025</div>
     </>
   );
 };

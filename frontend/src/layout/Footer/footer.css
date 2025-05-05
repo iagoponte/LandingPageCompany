@@ -1,40 +1,46 @@
 .footer {
 	width: 100%;
-	background: #3b3b3b;
-	display: block;
+	background: #dcdcdc;
+	display: flex;
+	text-align: start;
+	/* position:absolute bottom; */
  }
 
  .inner-footer {
-	 width: 95%;
+	 width: 100%;
 	 margin: auto;
 	 padding: 5px 5px;
 	 display: flex;
 	 flex-wrap: wrap;
 	 box-sizing: border-box;
-	 justify-content: center;
+	 /* justify-content: center; */
  }
 
 .footer-items {
-	width: 25%;
+	width: 100%;
 	padding: 10px 20px;
 	box-sizing: border-box;
-	color: #fff;
+	display: flex;
+	color: #2e2e2e;
+	flex-direction: column;
 }
 
 .footer-items p {
 	font-size: 16px;
 	text-align: justify;
-	line-height: 25px;
-	color: #fff;
+	margin-top: 0;
+	line-height: 15px;
+	color: #2e2e2e;
 }
 
-.footer-items h1 {
-	color: #fff;
+.footer-items h1, h3 {
+	color: #2e2e2e;
+	margin-bottom: 5px;
 }
 
 .border1 {
 	height: 3px;
-	width: 40px;
+	width: 80px;
 	background: #ff9800;
 	color: #ff9800;
 	background-color: #ff9800;
@@ -43,15 +49,16 @@
 
 ul {
 	list-style: none;
-	color: #fff;
+	color: #2e2e2e;
 	font-size: 15px;
 	letter-spacing: 0.5px;	
+	padding-left: 0;
  }
 
 ul a {
 	text-decoration: none;
 	outline: none;
-	color: #fff;
+	color: #2e2e2e;
 	transition: 0.3s;
 }
 
@@ -60,12 +67,12 @@ ul a:hover {
 }
 
 ul li {
-	margin: 10px 0;
+	margin: 0;
 	height: 25px;
 }
 
 li i {
-	margin-right: 20px;
+	margin-right: 0;
 }
 
 .social-media {
@@ -95,7 +102,14 @@ li i {
 .footer-bottom {
 	padding: 10px;
 	background: #3b3b3b;
-	color: #fff;
+	color: #2e2e2e;
 	font-size: 12px;
 	text-align: center;
+	align-self: end;
+}
+
+@media (min-width: 768px) {
+	.footer-items {
+		width: 33.33%;
+	}
 }
