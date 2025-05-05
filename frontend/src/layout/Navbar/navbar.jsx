@@ -3,16 +3,7 @@ import "../Navbar/navbar.css";
 
 export const Navbar = () => {
   return (
-    // <nav className="navbar_container">
-    //     <a href="/" className="navbar_logo_link"><img src="" alt="Logo Solares" aria-label="Logo da Empresa Solares"></img></a>
-    //     <div className="navigation">
-    //         <div className="left_container"></div>
-    //         <div className="right_container">
-    //             <p>Navbar aqui</p>
-    //         </div>
-    //     </div>
-    // </nav>
-    <div class="nav">
+    <nav class="nav bg-gray-900 p-10">
       <input type="checkbox" id="nav-check"></input>
       <div class="nav-header"></div>
       <div class="nav-btn">
@@ -28,6 +19,6 @@ export const Navbar = () => {
         <a href="#">Contato</a>
         <a href="#">Sobre nós</a>
       </div>
-    </div>
+    </nav>
   );
 };
