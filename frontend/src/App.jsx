@@ -1,6 +1,19 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
+<<<<<<< HEAD
+import { Home } from './pages/Home/home'
+import { Navbar } from './layout/navbar/navbar'
+import { Footer } from './layout/Footer/footer'
+import { ContactUs } from './pages/ContactUs/contactUs'
+import { Router } from './router/Router'
+import './App.css'
+
+function App() {
+
+  return (
+    <Router/>      
+=======
 import './App.css'
 
 function App() {
@@ -29,6 +42,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
     </>
+>>>>>>> 02a881eadff78309a66bee9f6d61dfc3a68edabf
   )
 }
 
