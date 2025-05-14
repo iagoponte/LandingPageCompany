@@ -17,7 +17,7 @@ export const ContactUs = () => {
             validation: {
                 required: "Email é requerido",
                 pattern: {
-                    value: /^\S+@\S+$/i,
+                    value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i,
                     message: "Formato de email inválido"
                 },
             },
@@ -30,7 +30,7 @@ export const ContactUs = () => {
             validation: {
                 required: "Número de telefone é requerido",
                 pattern: {
-                    value: /^\(?\d{2}\)?[\s-]?\d{4,5}[-]?\d{4}$/,
+                    value: /^\+?\d{1,3}?\s?\(?\d{2}\)?[\s-]?\d{4,5}[-]?\d{4}$/, //aceita números internacionais
                     message: "Número de telefone inválido"
                 },
             },
@@ -68,9 +68,26 @@ export const ContactUs = () => {
         },
     ];
 
-    const handleFormSubmit = (data) => {
+    const handleFormSubmit = async (data) => {
         //estruturar a requisição do back.
-        console.log('Form data:', data)
+        try {
+            const response = await fetch('URL API BACK', {
+                method: "POST",
+                headers: {
+                    "Content-type": "application/json",
+                },
+                body: JSON.stringify(data),
+            });
+            if (!response.ok) {
+                throw new Error("Falha ao submeter formulário"); //toastr aqui tbm
+            }
+            const result = await response.json();
+            console.log("form submetido:", result);
+            alert('form submetido com sucesso!'); //toastr aqui
+        } catch (error) {
+            console.error('Erro ao submeter formulário:', error)
+            alert('Erro ao submeter formulário, tente novamente')//toastr aqui
+        }
     }
 
     return (

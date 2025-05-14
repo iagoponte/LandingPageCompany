@@ -11,13 +11,13 @@ export const Form = ({fields, onSubmit}) => {
     } = useForm()
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)} className="bg-gray-900">
+        <form onSubmit={handleSubmit(onSubmit)} className="bg-gray-200 text-black">
             {fields.map((field) => (
                 <div key={field.name}>
-                    <label className="block mb-1">{field.label}</label>
+                    <label className="block mb-2 mt-3">{field.label}</label>
                     <input {...register(field.name, field.validation)}
-                    type={field.type || "undefined"}
-                    placeholder={field.placeholder || "undefined"}
+                    type={field.type}
+                    placeholder={field.placeholder}
                     className="border p-2 rounded w-90"
                     />
                     <br/>
