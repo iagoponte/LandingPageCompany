@@ -2,14 +2,15 @@
   "name": "backend",
   "version": "1.0.0",
   "main": "app.js",
+  "engines": {
+    "node": "20"
+  },
   "scripts": {
     "dev": "nodemon src/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsup src",
+    "start": "node dist/server.js"
   },
-<<<<<<< HEAD
-
-=======
->>>>>>> 02a881eadff78309a66bee9f6d61dfc3a68edabf
   "dependencies": {
     "@prisma/client": "^6.6.0",
     "cors": "^2.8.5",
