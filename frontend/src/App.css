@@ -1,9 +1,16 @@
+<<<<<<< HEAD
 /*Configurações Vite*/
 
 #root {
   max-width: 100%;
   margin: 0 auto;
   padding: 0;
+=======
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+>>>>>>> 02a881eadff78309a66bee9f6d61dfc3a68edabf
   text-align: center;
 }
 
