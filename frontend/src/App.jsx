@@ -5,17 +5,13 @@ import { Home } from './pages/Home/home'
 import { Navbar } from './layout/navbar/navbar'
 import { Footer } from './layout/Footer/footer'
 import { ContactUs } from './pages/ContactUs/contactUs'
+import { Router } from './router/Router'
 import './App.css'
 
 function App() {
 
   return (
-    <>
-      <Navbar/>
-      <Home/>
-      <ContactUs/>
-      <Footer/>
-    </>
+    <Router/>      
   )
 }
 
