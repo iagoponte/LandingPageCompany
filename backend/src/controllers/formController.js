@@ -3,11 +3,12 @@ const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 
 exports.createNewContact = async (req, res) => {
-  const { email, phone, position, windTurbineCount, technicalVisitAvailability } = req.body;
+  const { name, email, phone, position, windTurbineCount, technicalVisitAvailability } = req.body;
 
   try {
     const newForm = await contacts.create({
       data: {
+        name,
         email,
         phone,
         position,
