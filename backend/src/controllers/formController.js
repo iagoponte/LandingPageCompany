@@ -22,3 +22,12 @@ exports.createNewContact = async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 };
+
+exports.getListContacts = async (req, res) => {
+  try {
+    const contactsList = await contacts.findMany();
+    res.status(200).json(contactsList);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
