@@ -4,13 +4,13 @@ import { Form } from "../../components/Form/form";
 export const ContactUs = () => {
     const contactFields = [
         {
-            name: "Nome",
+            name: "name",
             label: "Nome",
             placeHolder: "Insira o seu nome",
             validation: {required: "Nome é requerido"},
         },
         {
-            name: "E-mail",
+            name: "email",
             label: "Email",
             placeHolder: "seumelhoremail@gmail.com",
             type: "email",
@@ -23,7 +23,7 @@ export const ContactUs = () => {
             },
         },
         {
-            name: "Telefone",
+            name: "phone",
             label: "telefone",
             placeHolder: "Insira seu telefone para contato",
             type: "tel",
@@ -36,26 +36,26 @@ export const ContactUs = () => {
             },
         },
         {
-            name: "cargo",
+            name: "position",
             label: "Cargo",
             placeHolder: "Insira o seu cargo atual",
             validation: {required: "Cargo é requerido"}
         },
         {
-            name: "tower_quantity",
+            name: "windTurbineCount",
             label: "Quantitativo de Torres Eólicas",
             type: "select",
             options: [
-              { value: "Até 5", label: "Até 5" },
-              { value: "Entre 5 e 30", label: "Entre 5 e 30" },
-              { value: "Mais de 30", label: "Mais de 30" },
+              { value: "5", label: "Até 5" },
+              { value: "5 ~ 30", label: "Entre 5 e 30" },
+              { value: "+30", label: "Mais de 30" },
             ],
             validation: {
               required: "Por favor, selecione a quantidade de torres",
             },
         },
         {
-            name: "visit_permission",
+            name: "technicalVisitAvailability",
             label: "Podemos marcar uma visita técnica para a próxima semana?",
             type: "radio",
             options: [
