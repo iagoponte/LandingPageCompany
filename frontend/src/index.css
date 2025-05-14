@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 @import "tailwindcss";
 
-=======
->>>>>>> 02a881eadff78309a66bee9f6d61dfc3a68edabf
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -10,11 +7,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-<<<<<<< HEAD
   background-color: #ffffff;
-=======
-  background-color: #242424;
->>>>>>> 02a881eadff78309a66bee9f6d61dfc3a68edabf
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
