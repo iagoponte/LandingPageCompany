@@ -1,18 +1,20 @@
-import React from "react";
 import { Form } from "../../components/Form/form";
+import { enviroment } from "../../enviroments/enviroment";
 
 export const ContactUs = () => {
+    const apiUrl = `${enviroment.apiUrl}/contact`;
+    // const apiUrl = "http://juazeiro-solares.onrender.com"; // erro de CORS, bloqueio.
     const contactFields = [
         {
             name: "name",
             label: "Nome",
-            placeHolder: "Insira o seu nome",
+            placeholder: "Insira o seu nome",
             validation: {required: "Nome é requerido"},
         },
         {
             name: "email",
             label: "Email",
-            placeHolder: "seumelhoremail@gmail.com",
+            placeholder: "seumelhoremail@gmail.com",
             type: "email",
             validation: {
                 required: "Email é requerido",
@@ -25,7 +27,7 @@ export const ContactUs = () => {
         {
             name: "phone",
             label: "telefone",
-            placeHolder: "Insira seu telefone para contato",
+            placeholder: "Insira seu telefone para contato",
             type: "tel",
             validation: {
                 required: "Número de telefone é requerido",
@@ -38,20 +40,16 @@ export const ContactUs = () => {
         {
             name: "position",
             label: "Cargo",
-            placeHolder: "Insira o seu cargo atual",
+            placeholder: "Insira o seu cargo atual",
             validation: {required: "Cargo é requerido"}
         },
+        //talvez aqui adicionar um campo de input, para adicinar a quantidade de torres... pois o bd recebe um int.
         {
             name: "windTurbineCount",
             label: "Quantitativo de Torres Eólicas",
-            type: "select",
-            options: [
-              { value: "5", label: "Até 5" },
-              { value: "5 ~ 30", label: "Entre 5 e 30" },
-              { value: "+30", label: "Mais de 30" },
-            ],
+            type: "number",
             validation: {
-              required: "Por favor, selecione a quantidade de torres",
+              required: "Por favor, insira a quantidade de torres",
             },
         },
         {
@@ -59,8 +57,8 @@ export const ContactUs = () => {
             label: "Podemos marcar uma visita técnica para a próxima semana?",
             type: "radio",
             options: [
-              { value: "yes", label: "Sim" },
-              { value: "no", label: "Não, podemos marcar para os próximos 15 dias" },
+              { value: "NEXT_WEEK", label: "Sim" },
+              { value: "NEXT_15_DAYS", label: "Não, podemos marcar para os próximos 15 dias" },
             ],
             validation: {
               required: "Por favor, selecione uma opção",
@@ -69,9 +67,12 @@ export const ContactUs = () => {
     ];
 
     const handleFormSubmit = async (data) => {
+        data.windTurbineCount = parseInt(data.windTurbineCount); //converter o valor para int, pois o back espera um int.
+        console.log("form data:", data);
+
         //estruturar a requisição do back.
         try {
-            const response = await fetch('URL API BACK', {
+            const response = await fetch(apiUrl, {
                 method: "POST",
                 headers: {
                     "Content-type": "application/json",
