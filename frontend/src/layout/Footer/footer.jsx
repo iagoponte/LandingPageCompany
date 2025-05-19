@@ -16,7 +16,7 @@ export const Footer = () => {
             <h3>Navegação</h3>
             <div class="border1"></div>
             <ul>
-              <a href="#">
+              <a href="/">
                 <li>Home</li>
               </a>
               <a href="#">
