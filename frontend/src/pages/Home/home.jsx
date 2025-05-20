@@ -1,12 +1,14 @@
 import React from "react";
 import "./home.css";
 import { Carousel } from "../../components/Carousel/carousel";
+import { HeroSection } from "../../layout/HeroSection/heroSection";
 
 export const Home = () => {
   return (
     <>
       <div className="container-home">
         <p>Home-page está aqui</p>
+        <HeroSection />
         <div>
           <h1>conteudo</h1>
           <Carousel />
