@@ -1,5 +1,6 @@
 import React from "react";
 import "./home.css";
+import { Carousel } from "../../components/Carousel/carousel";
 
 export const Home = () => {
   return (
@@ -8,6 +9,7 @@ export const Home = () => {
         <p>Home-page está aqui</p>
         <div>
           <h1>conteudo</h1>
+          <Carousel />
           <h2>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
             error totam aspernatur dolores tenetur, repudiandae nemo
