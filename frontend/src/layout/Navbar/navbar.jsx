@@ -25,7 +25,9 @@ export const Navbar = () => {
       <div className="flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center space-x-2">
-          <img className="h-6 w-6" src={cataventoImg} alt="logo_empresa" />
+          <a href="/" className="">
+            <img className="h-6 w-6" src={cataventoImg} alt="logo_empresa" />
+          </a>
           <span className="text-white text-xl font-semibold">Pulsares</span>
         </div>
 
