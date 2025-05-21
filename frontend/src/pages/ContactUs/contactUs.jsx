@@ -98,7 +98,7 @@ export const ContactUs = () => {
             <h3 className="text-orange-400 text-xl md:text-2xl text-center">Ideações Eólicas</h3>
         </div>
         <div className="p-4 max-w-md mx-auto py-2 mb-10">
-            <h1 className="text-2x1 font-bold mb-4 text-center">Contate-nos</h1>
+            <h1 className="text-2x1 font-bold mb-4 text-center">Suas informações para contato</h1>
             <Form fields={contactFields} onSubmit={handleFormSubmit}/>
         </div>
         </> 

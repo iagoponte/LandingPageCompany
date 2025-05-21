@@ -6,11 +6,8 @@ import { HeroSection } from "../../layout/HeroSection/heroSection";
 export const Home = () => {
   return (
     <>
-      <div className="container-home">
-        <p>Home-page está aqui</p>
         <HeroSection />
         <div>
-          <h1>conteudo</h1>
           <Carousel />
           <h2>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
@@ -25,7 +22,6 @@ export const Home = () => {
             assumenda voluptatum dolor dolorum.
           </h3>
         </div>
-      </div>
     </>
   );
 };
