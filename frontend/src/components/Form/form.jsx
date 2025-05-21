@@ -8,7 +8,7 @@ export const Form = ({ fields, onSubmit }) => {
   } = useForm();
 
    return (
-    <form onSubmit={handleSubmit(onSubmit)} className="bg-gray-200 text-black p-4 space-y-4">
+    <form onSubmit={handleSubmit(onSubmit)} className="shadow text-black p-4 space-y-4">
       {fields.map((field) => (
         <div key={field.name} className="mb-4">
           <label className="block mb-2 font-semibold">{field.label}</label>
@@ -35,9 +35,11 @@ export const Form = ({ fields, onSubmit }) => {
         </div>
       ))}
 
-      <button type="submit" className="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-900">
+      <div className="flex items-center gap-2">
+      <button type="submit" className="bg-gray-800 text-white mx-auto px-4 py-2 rounded hover:bg-orange-500">
         Enviar
       </button>
+      </div>
     </form>
   );
 
