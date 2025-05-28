@@ -36,11 +36,10 @@ export const Form = ({ fields, onSubmit }) => {
                                     </label>
                                 ))}
                             </div>
-                        // --- NOVO: Renderização do Select ---
                         ) : field.type === "select" ? (
                             <select
-                                {...register(field.name, field.validation)} // Usa a validação original
-                                className="border p-2 rounded w-full bg-white" // Adiciona bg-white
+                                {...register(field.name, field.validation)}
+                                className="border p-2 rounded w-full bg-white"
                             >
                                 {field.options?.map((option) => (
                                     <option key={option.value} value={option.value}>
@@ -51,7 +50,7 @@ export const Form = ({ fields, onSubmit }) => {
                             ) : field.type === "checkbox" ? (
                             <div className="flex flex-col gap-2">
                                 {field.options?.map((option) => (
-                                    <label key={option.value} className="flex items-start gap-3"> {/* Use items-start */}
+                                    <label key={option.value} className="flex items-start gap-3">
                                         <input 
                                             {...register(field.name, fieldValidation)} // Use fieldValidation
                                             type="checkbox" 
@@ -63,7 +62,6 @@ export const Form = ({ fields, onSubmit }) => {
                                     </label>
                                 ))}
                             </div>
-                        // --- FIM NOVO ---
                         ) : (
                             <input
                                 {...register(field.name, fieldValidation)} // Usa a validação ajustada
@@ -90,32 +88,4 @@ export const Form = ({ fields, onSubmit }) => {
             </div>
         </form>
   );
-
-//   return (
-//         <form onSubmit={handleSubmit(onSubmit)} className="bg-gray-200 text-black">
-//             {fields.map((field) => (
-//                 <div key={field.name}>
-//                     <label className="block mb-2 mt-3">{field.label}</label>
-//                     <input {...register(field.name, field.validation)}
-//                     type={field.type}
-//                     placeholder={field.placeholder}
-//                     className="border p-2 rounded w-90"
-//                     />
-//                     {field.options?.map((option) => (
-//                         <label key={option.value} className="flex items-center">
-//                             {option.label}
-//                         </label>
-//                     ))}
-//                     {errors[field.name] && (
-//                         <span className="text-red-500 text-sm">
-//                             {errors[field.name].message || "This field is required"}
-//                         </span>
-//                     )}            
-//                 </div>
-//             ))}
-//             <button type="submit" className="bg-gray-500 text-white px-4 rounded hover:bg-gray-900">
-//                 Submit
-//             </button>
-//         </form>
-//     )
 };
