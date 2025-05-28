@@ -6,7 +6,7 @@ export const ContactUs = () => {
     // const apiUrl = "http://juazeiro-solares.onrender.com"; // erro de CORS, bloqueio.
     const dateToday = new Date();
     const nextWeek = new Date(dateToday);
-    nextWeek.setDate(dateToday.getDate() + 7); // adiciona 7 dias à data atual
+    nextWeek.setDate(dateToday.getDate() + 10); // adiciona 10 dias à data atual
 
     const year = nextWeek.getFullYear();
     const month = String(nextWeek.getMonth() + 1).padStart(2, '0'); // meses começam do zero

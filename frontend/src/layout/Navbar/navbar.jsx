@@ -34,13 +34,16 @@ export const Navbar = () => {
         {/* Links (visíveis em telas médias para cima) */}
         <div className="hidden md:flex space-x-6 items-center">
           <a href="/" className="text-white hover:text-orange-500">
-            Home
+            Início
           </a>
           <a href="/contact_us" className="text-white hover:text-orange-500">
             Contato
           </a>
           <a href="#" className="text-white hover:text-orange-500">
-            Sobre nós
+            Empresa
+          </a>
+          <a href="#" className="text-white hover:text-orange-500">
+            Serviços
           </a>
         </div>
 
