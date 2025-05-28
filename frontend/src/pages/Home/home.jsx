@@ -1,24 +1,38 @@
 import React from "react";
 import "./home.css";
+import { Carousel } from "../../components/Carousel/carousel";
+import { HeroSection } from "../../layout/HeroSection/heroSection";
 
 export const Home = () => {
   return (
     <>
-      <div className="container-home">
-        <p>Home-page está aqui</p>
-        <div>
-          <h1>conteudo</h1>
-          <h2>
+      <HeroSection />
+      <div className="flex flex-row items-start justify-start gap-4 px-4">
+        <div className="w-1/2 py-4" >
+          <Carousel/>
+        </div>
+        <div className="w-1/2 ml-0 py-4">
+          <h2 className="text-md font-bold">Informaçõe dos serviços</h2>
+          <h3>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
             error totam aspernatur dolores tenetur, repudiandae nemo
             reprehenderit reiciendis fuga minus delectus harum nesciunt velit
-            debitis dicta ex expedita alias facere!
-          </h2>
-          <h3>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quasi quia
-            quam repellendus, itaque sapiente quas nostrum ducimus eligendi
-            quisquam doloribus illum modi corporis autem ipsa reprehenderit
-            assumenda voluptatum dolor dolorum.
+            debitis dicta ex expedita alias facere!Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Minima error totam aspernatur dolores
+            tenetur, repudiandae nemo reprehenderit reiciendis fuga minus
+            delectus harum nesciunt velit debitis dicta ex expedita alias
+            facere!Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Minima error totam aspernatur dolores tenetur, repudiandae nemo
+            reprehenderit reiciendis fuga minus delectus harum nesciunt velit
+            debitis dicta ex expedita alias facere!Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Minima error totam aspernatur dolores
+            tenetur, repudiandae nemo reprehenderit reiciendis fuga minus
+            delectus harum nesciunt velit debitis dicta ex expedita alias
+            facere!Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Minima error totam aspernatur dolores tenetur, repudiandae nemo
+            reprehenderit reiciendis fuga minus delectus harum nesciunt velit
+            debitis dicta ex expedita alias facere!Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. 
           </h3>
         </div>
       </div>
