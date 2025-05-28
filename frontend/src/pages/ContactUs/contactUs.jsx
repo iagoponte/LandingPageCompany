@@ -52,22 +52,32 @@ export const ContactUs = () => {
             placeholder: "Insira o seu cargo atual",
             validation: {required: "Cargo é requerido"}
         },
-        // não vai mais ser utilizado.
-        // {
-        //     name: "windTurbineCount",
-        //     label: "Quantitativo de Torres Eólicas",
-        //     type: "number",
-        //     validation: {
-        //       required: "Por favor, insira a quantidade de torres",
-        //     },
-        // },
         {
             name: "businessType",
-            label: "Categoria da sua Empresa", 
-            placeholder: "Descreva a categoria da sua empresa",
+            label: "Categoria da sua Empresa",
+            type: "select", 
+            placeholder: "Selecione uma categoria",
+            options: [ 
+                { value: "", label: "Selecione uma categoria" },
+                { value: "O&M", label: "Operação e Manutenção" },
+                { value: "Mantenedora de parque eólico", label: "Mantenedora" },
+                { value: "Proprietária de parque eólico", label: "Proprietária" },
+                { value: "OTHER", label: "Outros" },
+            ],
+            validation: { 
+                required: "Selecione uma categoria",
+                validate: (value) => value !== "" || "Selecione uma categoria válida"
+            },
+        },
+        {
+            name: "businessTypeOther",
+            label: "Especifique a Categoria da sua Empresa:", // Label do campo de texto
             type: "text",
+            placeholder: "Digite a categoria aqui",
+            conditionalOn: "businessType", // Depende do campo 'businessType'
+            conditionalValue: "OTHER",     // Quando o valor for 'OTHER'
             validation: {
-                required: "Por favor, descreva a categoria da sua empresa",
+                required: "Por favor, especifique a categoria", // Será obrigatório APENAS quando visível
             },
         },
         {
@@ -75,18 +85,24 @@ export const ContactUs = () => {
             label: "Podemos marcar uma visita técnica para a próxima semana?",
             type: "date",
             min: minDateValue,
-            // options: [
-            //   { value: "NEXT_WEEK", label: "Sim" },
-            //   { value: "NEXT_15_DAYS", label: "Não, podemos marcar para os próximos 15 dias" },
-            // ],
-            validation: (value) => {return value >= minDateValue || "A data deve ser pelo menos uma semana a partir de hoje"},
-        
+            validation:{
+                validate: (value) => {return value >= minDateValue || "A data deve ser pelo menos uma semana a partir de hoje"},
+            } 
         },
     ];
 
     const handleFormSubmit = async (data) => {
-        // data.windTurbineCount = parseInt(data.windTurbineCount); //converter o valor para int, pois o back espera um int.
-        console.log("form data:", data);
+        //lógica para tratar o campo de texto OUTROS do businessType.
+        let finalBusinessType = data.businessType;
+        if (data.businessType === 'OTHER'){
+            finalBusinessType = data.businessTypeOther
+        };
+        const submissionData = {
+            ...data, 
+            businessType: finalBusinessType,
+        };
+        delete submissionData.businessTypeOther; //remover o campo de texto adicional, pois não é necessário no back.
+        console.log("form data:", submissionData);
 
         //estruturar a requisição do back.
         try {
@@ -95,7 +111,7 @@ export const ContactUs = () => {
                 headers: {
                     "Content-type": "application/json",
                 },
-                body: JSON.stringify(data),
+                body: JSON.stringify(submissionData),
             });
             if (!response.ok) {
                 throw new Error("Falha ao submeter formulário"); //toastr aqui tbm
