@@ -89,18 +89,48 @@ export const ContactUs = () => {
                 validate: (value) => {return value >= minDateValue || "A data deve ser pelo menos uma semana a partir de hoje"},
             } 
         },
+        {
+            name: "lgpdConsent",
+            label: "", // O label principal virá do texto customizado
+            type: "checkbox", // Novo tipo
+            options: [ // Usamos options para o texto ao lado do checkbox
+                { 
+                    value: "true", 
+                    label: ( // Usamos uma função para renderizar JSX com link
+                        <span>
+                            Eu li e concordo com a{" "}
+                            <a href="/politica-de-privacidade" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                                Política de Privacidade
+                            </a>{" "}
+                            e autorizo o uso dos meus dados para contato comercial.
+                        </span>
+                    )
+                }
+            ],
+            validation: {
+                required: "Você deve aceitar os termos para continuar.",
+            },
+        },
     ];
 
     const handleFormSubmit = async (data) => {
         //lógica para tratar o campo de texto OUTROS do businessType.
         let finalBusinessType = data.businessType;
+        if (!data.lgpdConsent) {
+            alert("É necessário aceitar a Política de Privacidade.");
+            return; // Interrompe o envio se não houver consentimento
+        }
         if (data.businessType === 'OTHER'){
             finalBusinessType = data.businessTypeOther
         };
         const submissionData = {
             ...data, 
             businessType: finalBusinessType,
+            lgpdConsentTimestamp: new Date().toISOString(),//deletar sado delete tudo do lgdp.
         };
+        //talvez seja necessário remover o envio para o back do lgpdConsent (pois somente será aceito o form que está com o checkbox marcado).
+        // delete submissionData.lgpdConsent;
+
         delete submissionData.businessTypeOther; //remover o campo de texto adicional, pois não é necessário no back.
         console.log("form data:", submissionData);
 
