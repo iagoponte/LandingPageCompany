@@ -26,6 +26,8 @@ export const Form = ({ fields, onSubmit }) => {
               {...register(field.name, field.validation)}
               type={field.type}
               placeholder={field.placeholder}
+              min={field.min}
+              max={field.max}
               className="border p-2 rounded w-full"
             />
           )}

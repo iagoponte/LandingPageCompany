@@ -4,6 +4,15 @@ import { enviroment } from "../../enviroments/enviroment";
 export const ContactUs = () => {
     const apiUrl = `${enviroment.apiUrl}/contact`;
     // const apiUrl = "http://juazeiro-solares.onrender.com"; // erro de CORS, bloqueio.
+    const dateToday = new Date();
+    const nextWeek = new Date(dateToday);
+    nextWeek.setDate(dateToday.getDate() + 7); // adiciona 7 dias à data atual
+
+    const year = nextWeek.getFullYear();
+    const month = String(nextWeek.getMonth() + 1).padStart(2, '0'); // meses começam do zero
+    const day = String(nextWeek.getDate()).padStart(2, '0'); // garante que o dia tenha dois dígitos
+    const minDateValue = `${year}-${month}-${day}`; // formata a data no padrão YYYY-MM-DD
+
     const contactFields = [
         {
             name: "name",
@@ -26,7 +35,7 @@ export const ContactUs = () => {
         },
         {
             name: "phone",
-            label: "telefone",
+            label: "Telefone",
             placeholder: "Insira seu telefone para contato",
             type: "tel",
             validation: {
@@ -43,31 +52,40 @@ export const ContactUs = () => {
             placeholder: "Insira o seu cargo atual",
             validation: {required: "Cargo é requerido"}
         },
-        //talvez aqui adicionar um campo de input, para adicinar a quantidade de torres... pois o bd recebe um int.
+        // não vai mais ser utilizado.
+        // {
+        //     name: "windTurbineCount",
+        //     label: "Quantitativo de Torres Eólicas",
+        //     type: "number",
+        //     validation: {
+        //       required: "Por favor, insira a quantidade de torres",
+        //     },
+        // },
         {
-            name: "windTurbineCount",
-            label: "Quantitativo de Torres Eólicas",
-            type: "number",
+            name: "businessType",
+            label: "Categoria da sua Empresa", 
+            placeholder: "Descreva a categoria da sua empresa",
+            type: "text",
             validation: {
-              required: "Por favor, insira a quantidade de torres",
+                required: "Por favor, descreva a categoria da sua empresa",
             },
         },
         {
             name: "technicalVisitAvailability",
             label: "Podemos marcar uma visita técnica para a próxima semana?",
-            type: "radio",
-            options: [
-              { value: "NEXT_WEEK", label: "Sim" },
-              { value: "NEXT_15_DAYS", label: "Não, podemos marcar para os próximos 15 dias" },
-            ],
-            validation: {
-              required: "Por favor, selecione uma opção",
-            },
+            type: "date",
+            min: minDateValue,
+            // options: [
+            //   { value: "NEXT_WEEK", label: "Sim" },
+            //   { value: "NEXT_15_DAYS", label: "Não, podemos marcar para os próximos 15 dias" },
+            // ],
+            validation: (value) => {return value >= minDateValue || "A data deve ser pelo menos uma semana a partir de hoje"},
+        
         },
     ];
 
     const handleFormSubmit = async (data) => {
-        data.windTurbineCount = parseInt(data.windTurbineCount); //converter o valor para int, pois o back espera um int.
+        // data.windTurbineCount = parseInt(data.windTurbineCount); //converter o valor para int, pois o back espera um int.
         console.log("form data:", data);
 
         //estruturar a requisição do back.
