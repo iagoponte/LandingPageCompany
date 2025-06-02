@@ -1,18 +1,20 @@
 import { Form } from "../../components/Form/form";
-import { initialFormData } from "../../constants/formConstant";
 import { enviroment } from "../../enviroments/enviroment";
 
-export const ContactUs = ({ dataFromFirstStep, onFinalSubmit, onBack }) => {
+export const ContactUs = ({ formData }) => {
+    const initialFormData = {
+    name: '',         // Corresponde a contactFields[0].name
+    email: '',        // Corresponde a contactFields[1].name
+    phone: '',
+    position: '',
+    businessType: '',
+    businessTypeOther: '',
+    technicalVisitAvailability: '',
+    lgpdConsent: false,
+    };
+
   const apiUrl = `${enviroment.apiUrl}/contact`;
   // const apiUrl = "http://juazeiro-solares.onrender.com"; // erro de CORS, bloqueio.
-//   const dateToday = new Date();
-//   const nextWeek = new Date(dateToday);
-//   nextWeek.setDate(dateToday.getDate() + 10); // adiciona 10 dias à data atual
-
-//   const year = nextWeek.getFullYear();
-//   const month = String(nextWeek.getMonth() + 1).padStart(2, "0"); // meses começam do zero
-//   const day = String(nextWeek.getDate()).padStart(2, "0"); // garante que o dia tenha dois dígitos
-//   const minDateValue = `${year}-${month}-${day}`; // formata a data no padrão YYYY-MM-DD
 
   const contactFields = [
     {
@@ -87,9 +89,9 @@ export const ContactUs = ({ dataFromFirstStep, onFinalSubmit, onBack }) => {
       type: "date",
       min: (() => {
         const dateToday = new Date();
-        const nextWeek = new Date(dateToday);
+        const nextWeek = new Date(dateToday); //evita alterar a data atual diretamente
         nextWeek.setDate(dateToday.getDate() + 10);
-        return nextWeek.toISOString().split("T")[0];
+        return nextWeek.toISOString().split("T")[0]; //divide o resultado da string data a partir do T e retorna a primeira parte [0], antes do T.
       })(),
       validation: {
         validate: (value) => {
@@ -133,12 +135,6 @@ export const ContactUs = ({ dataFromFirstStep, onFinalSubmit, onBack }) => {
     },
   ];
 
-//   const ContactUsInitialFormValues = {
-//     ...initialFormData,
-//     ...dataFromFirstStep,
-//     lgpdConsent: dataFromFirstStep.lgpdConsent || false, // Garantir que o consentimento esteja definido
-//   };
-
   const handleFormSubmit = async (data) => {
     //lógica para tratar o campo de texto OUTROS do businessType.
     let finalBusinessType = data.businessType;
@@ -155,13 +151,9 @@ export const ContactUs = ({ dataFromFirstStep, onFinalSubmit, onBack }) => {
       lgpdConsentTimestamp: data.lgpdConsent === "true" ? new Date().toISOString() : null,
     };
     //talvez seja necessário remover o envio para o back do lgpdConsent (pois somente será aceito o form que está com o checkbox marcado).
-    // delete submissionData.lgpdConsent;
-
     delete submissionData.businessTypeOther; //remover o campo de texto adicional, pois não é necessário no back.
     console.log("form data:", submissionData);
-    // onFinalSubmit(submissionData); //chamar a função do pai para enviar os dados para o back.
-
-    //estruturar a requisição do back.
+    //estruturando requisição para o back end ↓
     try {
       const response = await fetch(apiUrl, {
         method: "POST",
@@ -171,16 +163,16 @@ export const ContactUs = ({ dataFromFirstStep, onFinalSubmit, onBack }) => {
         body: JSON.stringify(submissionData),
       });
       if (!response.ok) {
-        throw new Error("Falha ao submeter formulário"); //toastr aqui tbm
+        throw new Error("Falha ao submeter formulário"); //← toastr aqui
       }
       const result = await response.json();
       console.log("form submetido:", result);
-      alert("form submetido com sucesso!"); //toastr aqui
+      alert("form submetido com sucesso!"); //← toastr aqui
     } catch (error) {
       console.error("Erro ao submeter formulário:", error);
-      alert("Erro ao submeter formulário, tente novamente"); //toastr aqui
-    }
-  
+      alert("Erro ao submeter formulário, tente novamente"); //← toastr aqui
+    };
+    };
 
   return (
     <>
@@ -197,28 +189,7 @@ export const ContactUs = ({ dataFromFirstStep, onFinalSubmit, onBack }) => {
         <h1 className="text-2x1 font-bold mb-4 text-center">
           Suas informações para contato
         </h1>
-        <Form fields={contactFields} onSubmit={handleFormSubmit} />
-      </div>
-    </>
-  );
-};
-
-  return (
-    <>
-      <div className="relative z-10 flex items-center justify-center flex-col h-full py-10">
-        <h1 className="text-orange-500 text-4xl md:text-6xl font-bold text-center">
-          {" "}
-          Pulsares{" "}
-        </h1>
-        <h3 className="text-orange-400 text-xl md:text-2xl text-center">
-          Ideações Eólicas
-        </h3>
-      </div>
-      <div className="p-4 max-w-md mx-auto py-2 mb-10">
-        <h1 className="text-2x1 font-bold mb-4 text-center">
-          Suas informações para contato
-        </h1>
-        <Form fields={contactFields} onSubmit={handleFormSubmit} />
+        <Form fields={contactFields} initialValues={{...initialFormData, ...formData}} onSubmit={handleFormSubmit} />
       </div>
     </>
   );

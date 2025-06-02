@@ -1,11 +1,15 @@
-import React from "react";
+import { useState } from "react";
 import "./home.css";
 import { Carousel } from "../../components/Carousel/carousel";
 import { HeroSection } from "../../layout/HeroSection/heroSection";
-import { initialFormData } from "../../constants/formConstant";
-import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+import { Modal } from "../../components/Modal/modal";
+import { Form } from "../../components/Form/form";
 
-export const Home = ({onStepSubmit}) => {
+export const Home = ({formData, setFormData}) => {
+  const navigate = useNavigate();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const homePageFormFields = [
     {
       name: "name",
@@ -27,16 +31,31 @@ export const Home = ({onStepSubmit}) => {
       },
     }
   ];
-  const homeInitialValues = {
-    name: initialFormData.name,
-    email: initialFormData.email,
-  };
+  // const homeInitialValues = {
+  //   name: initialFormData.name,
+  //   email: initialFormData.email,
+  // };
+
+  // const handleSubmit = (data) => {
+  //   console.log("Form data submitted:", data);
+  //   onStepSubmit(data);
+  // };
 
   const handleSubmit = (data) => {
+    setFormData(data);
+    setIsModalOpen(true);
+    //inserir, aqui, a lógica de envio do formulário para o backend
     console.log("Form data submitted:", data);
-    onStepSubmit(data);
   };
 
+  const handleProceed = () => {
+    setIsModalOpen(false);
+    navigate('/contact_us');
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
   return (
     <>
       <HeroSection />
@@ -69,13 +88,19 @@ export const Home = ({onStepSubmit}) => {
           </h3>
         </div>
       </div>
-      <div>
+      <div className="p-4 max-w-md mx-auto py-2 mb-10">
         <h1>CTA form HomePage</h1>
         <Form 
         fields={homePageFormFields}
-        initialValues={homeInitialValues}
+        initialValues={formData}
         onSubmit={handleSubmit} />
       </div>
+      <Modal 
+        isOpen={isModalOpen} 
+        onClose={handleCloseModal} 
+        onProceed={handleProceed} 
+        message="Você está prestes a ser redirecionado para a página de contato. Deseja continuar?" 
+        proceedText="Continuar" />
     </>
   );
 };
