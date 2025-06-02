@@ -25,23 +25,7 @@ export const Carousel = () => {
   }, [emblaApi]);
 
   return (
-    // <div className="embla overflow-hidden rounded-xl shadow-lg max-w-3xl mx-auto" ref={emblaRef}>
-    //   <div className="embla__container flex">
-    //     <div className="embla__slide min-w-full flex-shrink-0 bg-white/30 backdrop-blur-md p-4">
-    //         <img className="w-full h-100 rounded-2x1 object-cover" src={EolicaImgOne} alt='torres eólicas'></img>
-    //     </div>
-    //     <div className="embla__slide min-w-full flex-shrink-0 bg-white/30 backdrop-blur-md p-4">
-    //         <img className="w-full h-100 rounded-2x1 object-cover" src={EolicaImgTwo} alt='torres eólicas'></img>
-    //     </div>
-    //     <div className="embla__slide min-w-full flex-shrink-0 bg-white/30 backdrop-blur-md p-4">
-    //         <img className="w-full h-100 rounded-2x1 object-cover" src={EolicaImgThree} alt='torres eólicas'></img>
-    //     </div>
-    //     <div className="embla__slide min-w-full flex-shrink-0 bg-white/30 backdrop-blur-md p-4">
-    //         <img className="w-full h-100 rounded-2x1 object-cover" src={EolicaImgFour} alt='torres eólicas'></img>
-    //     </div>
-    //   </div>
-    // </div>
-
+    
     <div className="relative max-w-3xl mx-auto">
       {/* Carrossel */}
       <div

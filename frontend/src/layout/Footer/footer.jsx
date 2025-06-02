@@ -1,10 +1,12 @@
 import React from "react";
 import "./footer.css";
 import { MapPinned, Phone, MailPlus, Instagram, Linkedin } from "lucide-react";
+import logoPulsares from "../../assets/logoPulsares.webp";
 
 
 //corrigir tipo de display, para que mantenha-se responsivo.
 export const Footer = () => {
+  // const logoPulsares = require("../../assets/logoPulsares.png");
   return (
     <>
       {/* <div class="footer">
@@ -64,25 +66,48 @@ export const Footer = () => {
       <footer className="w-full bg-blue-400 text-start">
         <div className="w-full mx-auto p-5 flex flex-wrap box-border">
           {/* <!-- Coluna 1 --> */}
-          <div className="w-full md:w-1/3 p-5 box-border flex flex-col text-gray-800">
-            <h1 className="text-2xl font-bold mb-0">Pulsares</h1>
-            <div className="flex gap-1 mb-2">
-              <Instagram className="h-4 w-4 hover:text-orange-500"/>
-              <Linkedin className="h-4 w-4 hover:text-orange-500"/>
+          <div className="w-full md:w-1/8 box-border flex flex-col items-center justify-center">
+            <div className="flex flex-col">
+              <a href="/"><img src={logoPulsares} alt="logo" className="h-50 w-50 align-center"></img></a>
             </div>
-            <p className="text-sm text-justify leading-snug">
-              Descrição da empresa
-            </p>
+          </div>
+          {/* <!-- Coluna 2 --> */}
+          <div className="w-full md:w-4/8 p-5 box-border flex flex-col text-gray-800">
+            {/* <h1 className="text-2xl font-bold mb-0">Pulsares</h1> */}
+            <div className="flex flex-col h-full">
+              <div className="flex gap-1 mb-2">
+              <a href="https://www.instagram.com/pulsar.es/"><Instagram className="h-6 w-6 hover:text-orange-500"/></a>
+              <a href="https://www.linkedin.com/company/pulsares-engenharia"><Linkedin className="h-6 w-6 hover:text-orange-500"/></a>
+            </div>
+            <ul className="space-y-1 text-sm">
+              <li className="flex">
+                <i className="mr-1"><MapPinned className="h-5 w-5 opacity-60" /></i>Endereço comercial
+              </li>
+              <li className="flex items-start group mt-2 mb-2">
+                <i className="mr-1"><Phone className="h-5 w-5 opacity-60 mt-2"/></i>
+                <div className="flex flex-col">
+                  <span><strong>CEO (Gil Palácio):</strong> <a href="tel:+5585999666948" className="hover:text-orange-500 transition-colors">+55 (85) 99966-6948</a></span>
+                  <span><strong>COO (Mário Alves):</strong> <a href="tel:+3580465456808" className="hover:text-orange-500 transition-colors">+358 046 5456808</a></span>
+                </div>
+              </li>
+              <li className="flex">
+                <i className="mr-1"><MailPlus className="h-5 w-5  opacity-60" /></i>
+                <a href="mailto:spinoffvibracao@gmail.com" className="hover:text-orange-500 transition-colors">
+                spinoffvibracao@gmail.com
+              </a>
+              </li>
+            </ul>
+            </div>
           </div>
 
           {/* <!-- Coluna 2 --> */}
-          <div className="w-full md:w-1/3 p-5 box-border flex flex-col text-gray-800">
+          <div className="w-full md:w-3/8 p-5 box-border flex flex-col text-gray-800 align-end">
             <h3 className="text-xl font-semibold mb-2">Navegação</h3>
             <div className="h-[3px] w-20 bg-orange-500 mb-2"></div>
             <ul className="space-y-1 text-sm">
               <li>
                 <a href="/" className="hover:text-orange-500 transition-colors">
-                  Home
+                  Início
                 </a>
               </li>
               <li>
@@ -92,14 +117,19 @@ export const Footer = () => {
               </li>
               <li>
                 <a href="#" className="hover:text-orange-500 transition-colors">
-                  Sobre nós
+                  Empresa
+                </a>
+              </li>
+              <li>
+                <a href="#" className="hover:text-orange-500 transition-colors">
+                  Serviços
                 </a>
               </li>
             </ul>
           </div>
 
           {/* <!-- Coluna 3 --> */}
-          <div className="w-full md:w-1/3 p-5 box-border flex flex-col text-gray-800">
+          {/* <div className="w-full md:w-1/3 p-5 box-border flex flex-col text-gray-800">
             <h3 className="text-xl font-semibold mb-2">Contate-nos</h3>
             <div className="h-[3px] w-20 bg-orange-500 mb-2"></div>
             <ul className="space-y-1 text-sm">
@@ -113,12 +143,12 @@ export const Footer = () => {
                 <i className="mr-1"><MailPlus className="h-4 w-4 opacity-60" /></i>Email para contato
               </li>
             </ul>
-          </div>
+          </div> */}
         </div>
 
         {/* <!-- Rodapé inferior --> */}
         <div className="text-center text-xs text-gray-800 bg-blue-400 py-2">
-          Copyright &copy; Pulsares Eólica 2025
+          Copyright &copy; Pulsares 2025
         </div>
       </footer>
     </>
