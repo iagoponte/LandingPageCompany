@@ -1,12 +1,3 @@
-const initialFormData = {
-  nome: '',
-  email: '',
-  telefone: '',
-  cargo: '',
-  empresa: '',
-  necessidade: '',
-};
-
 export const Modal = ({ isOpen, onClose, onProceed, message, proceedText }) => {
   if (!isOpen) return null;
 

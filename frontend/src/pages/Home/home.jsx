@@ -2,8 +2,41 @@ import React from "react";
 import "./home.css";
 import { Carousel } from "../../components/Carousel/carousel";
 import { HeroSection } from "../../layout/HeroSection/heroSection";
+import { initialFormData } from "../../constants/formConstant";
+import { useForm } from "react-hook-form";
 
-export const Home = () => {
+export const Home = ({onStepSubmit}) => {
+  const homePageFormFields = [
+    {
+      name: "name",
+      label: "Nome",
+      placeholder: "Insira o seu nome completo",
+      validation: { required: "Nome é requerido" },
+    },
+    {
+      name: "email",
+      label: "Email",
+      placeholder: "seumelhoremail@gmail.com",
+      type: "email",
+      validation: {
+        required: "Email é requerido",
+          pattern: {
+            value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i,
+              message: "Formato de email inválido"
+          },
+      },
+    }
+  ];
+  const homeInitialValues = {
+    name: initialFormData.name,
+    email: initialFormData.email,
+  };
+
+  const handleSubmit = (data) => {
+    console.log("Form data submitted:", data);
+    onStepSubmit(data);
+  };
+
   return (
     <>
       <HeroSection />
@@ -35,6 +68,13 @@ export const Home = () => {
             consectetur adipisicing elit. 
           </h3>
         </div>
+      </div>
+      <div>
+        <h1>CTA form HomePage</h1>
+        <Form 
+        fields={homePageFormFields}
+        initialValues={homeInitialValues}
+        onSubmit={handleSubmit} />
       </div>
     </>
   );
