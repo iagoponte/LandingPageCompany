@@ -1,4 +1,5 @@
-import cataventoImg from "../../assets/catavento.png";
+import logoPulsares from "../../assets/logoPulsares.webp";
+
 
 export const Navbar = () => {
   return (
@@ -26,9 +27,9 @@ export const Navbar = () => {
         {/* Logo */}
         <div className="flex items-center space-x-2">
           <a href="/" className="">
-            <img className="h-6 w-6" src={cataventoImg} alt="logo_empresa" />
+            <img className="h-7 w-7" src={logoPulsares} alt="logo_empresa" />
           </a>
-          <span className="text-white text-xl font-semibold">Pulsares</span>
+          <a href="/"><span className="text-white text-xl font-semibold">Pulsares</span></a>
         </div>
 
         {/* Links (visíveis em telas médias para cima) */}
