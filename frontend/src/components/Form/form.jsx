@@ -1,12 +1,22 @@
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 
-export const Form = ({ fields, onSubmit }) => {
+export const Form = ({ fields, onSubmit, initialValues }) => {
   const {
     register,
     handleSubmit,
     watch,
+    reset,    
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    defaultValues: initialValues || {}, 
+  });
+
+  useEffect(() => {
+    if (initialValues) {
+        reset(initialValues);
+    }
+  }, [initialValues, reset])
 
    return (
     <form onSubmit={handleSubmit(onSubmit)} className="shadow text-black p-4 space-y-4">

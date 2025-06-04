@@ -1,11 +1,4 @@
-const initialFormData = {
-  nome: '',
-  email: '',
-  telefone: '',
-  cargo: '',
-  empresa: '',
-  necessidade: '',
-};
+import React from 'react';
 
 export const Modal = ({ isOpen, onClose, onProceed, message, proceedText }) => {
   if (!isOpen) return null;

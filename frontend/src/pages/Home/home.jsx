@@ -1,17 +1,18 @@
-import React from "react";
 import "./home.css";
 import { Carousel } from "../../components/Carousel/carousel";
 import { HeroSection } from "../../layout/HeroSection/heroSection";
+import { HomePageForm } from "../../components/HomePageForm/homePageForm";
 
-export const Home = () => {
+export const Home = ({formData, setFormData}) => {
+ 
   return (
     <>
       <HeroSection />
-      <div className="flex flex-row items-start justify-start gap-4 px-4">
-        <div className="w-1/2 py-4" >
+      <div className="max-x-7xl mx-auto flex flex-wrap items-start justify-start gap-4 p-10">
+        <div className="w-full md:w-2/3 flex flex-col py-4 box-border" >
           <Carousel/>
         </div>
-        <div className="w-1/2 ml-0 py-4">
+        <div className="w-full md:w-1/3 flex flex-col py-4 box-border">
           <h2 className="text-md font-bold">Informaçõe dos serviços</h2>
           <h3>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima
@@ -36,6 +37,10 @@ export const Home = () => {
           </h3>
         </div>
       </div>
+      <div className="p-4 max-w-md mx-auto py-2 mb-10">
+        <h1>CTA form HomePage</h1>
+        <HomePageForm setFormData={setFormData} formData={formData}/>
+        </div>
     </>
   );
 };
