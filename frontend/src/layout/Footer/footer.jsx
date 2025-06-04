@@ -1,7 +1,7 @@
 import React from "react";
 import "./footer.css";
 import { MapPinned, Phone, MailPlus, Instagram, Linkedin } from "lucide-react";
-import logoPulsares from "../../assets/logoPulsares.webp";
+import logoPulsares from "../../assets/logoPulsares3.webp";
 
 
 //corrigir tipo de display, para que mantenha-se responsivo.
@@ -68,7 +68,7 @@ export const Footer = () => {
           {/* <!-- Coluna 1 --> */}
           <div className="w-full md:w-1/8 box-border flex flex-col items-center justify-center">
             <div className="flex flex-col">
-              <a href="/"><img src={logoPulsares} alt="logo" className="h-50 w-50 align-center"></img></a>
+              <a href="/"><img src={logoPulsares} alt="logo" className="h-auto w-50 align-center"></img></a>
             </div>
           </div>
           {/* <!-- Coluna 2 --> */}

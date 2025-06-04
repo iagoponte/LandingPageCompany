@@ -41,7 +41,7 @@ export const Carousel = () => {
                 className="embla__slide min-w-full flex-shrink-0 backdrop-blur-md p-2"
               >
                 <img
-                  className="w-full h-[400px] rounded-2xl object-contain"
+                  className="w-full h-[400px] rounded-2xl object-fit-fill"
                   src={img}
                   alt={`torres eólicas ${index + 1}`}
                 />
