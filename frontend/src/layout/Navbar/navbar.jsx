@@ -3,23 +3,6 @@ import logoPulsares from "../../assets/logoPulsares.webp";
 
 export const Navbar = () => {
   return (
-    // <nav class="nav bg-gray-900 p-8">
-    //   <input type="checkbox" id="nav-check"></input>
-    //   <div class="nav-header"></div>
-    //   <div class="nav-btn">
-    //     <label for="nav-check">
-    //       <span></span>
-    //       <span></span>
-    //       <span></span>
-    //     </label>
-    //   </div>
-
-    //   <div class="nav-links">
-    //     <a href="/">Home</a>
-    //     <a href="/contact_us">Contato</a>
-    //     <a href="#">Sobre nós</a>
-    //   </div>
-    // </nav>
     <nav className="w-full bg-blue-500 p-4">
       <input type="checkbox" id="nav-check" className="hidden peer" />
 
@@ -27,7 +10,7 @@ export const Navbar = () => {
         {/* Logo */}
         <div className="flex items-center space-x-2">
           <a href="/" className="">
-            <img className="h-7 w-7" src={logoPulsares} alt="logo_empresa" />
+            <img className="h-auto w-10" src={logoPulsares} alt="logo_empresa" />
           </a>
           <a href="/"><span className="text-white text-xl font-semibold">Pulsares</span></a>
         </div>

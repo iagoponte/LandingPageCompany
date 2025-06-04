@@ -68,17 +68,17 @@ export const Footer = () => {
           {/* <!-- Coluna 1 --> */}
           <div className="w-full md:w-1/8 box-border flex flex-col items-center justify-center">
             <div className="flex flex-col">
-              <a href="/"><img src={logoPulsares} alt="logo" className="h-auto w-50 align-center"></img></a>
+              <a href="/"><img src={logoPulsares} alt="logo" className="h-auto w-60 align-center"></img></a>
+            </div>
+            <div className="flex gap-1 mb-2">
+              <a href="https://www.instagram.com/pulsar.es/"><Instagram className="h-5 w-5 text-gray-100 hover:text-orange-500"/></a>
+              <a href="https://www.linkedin.com/company/pulsares-engenharia"><Linkedin className="h-5 w-5 text-gray-100 hover:text-orange-500"/></a>
             </div>
           </div>
           {/* <!-- Coluna 2 --> */}
-          <div className="w-full md:w-4/8 p-5 box-border flex flex-col text-gray-800">
+          <div className="w-full md:w-4/8 p-5 box-border flex flex-col text-gray-100">
             {/* <h1 className="text-2xl font-bold mb-0">Pulsares</h1> */}
             <div className="flex flex-col h-full">
-              <div className="flex gap-1 mb-2">
-              <a href="https://www.instagram.com/pulsar.es/"><Instagram className="h-6 w-6 hover:text-orange-500"/></a>
-              <a href="https://www.linkedin.com/company/pulsares-engenharia"><Linkedin className="h-6 w-6 hover:text-orange-500"/></a>
-            </div>
             <ul className="space-y-1 text-sm">
               <li className="flex">
                 <i className="mr-1"><MapPinned className="h-5 w-5 opacity-60" /></i>Endereço comercial
@@ -101,7 +101,7 @@ export const Footer = () => {
           </div>
 
           {/* <!-- Coluna 2 --> */}
-          <div className="w-full md:w-3/8 p-5 box-border flex flex-col text-gray-800 align-end">
+          <div className="w-full md:w-3/8 p-5 box-border flex flex-col text-gray-100 align-end">
             <h3 className="text-xl font-semibold mb-2">Navegação</h3>
             <div className="h-[3px] w-20 bg-orange-500 mb-2"></div>
             <ul className="space-y-1 text-sm">
@@ -130,7 +130,7 @@ export const Footer = () => {
         </div>
 
         {/* <!-- Rodapé inferior --> */}
-        <div className="text-center text-xs text-gray-800 bg-blue-400 py-2">
+        <div className="text-center text-xs text-gray-100 bg-blue-400 py-2">
           Copyright &copy; Pulsares 2025
         </div>
       </footer>
