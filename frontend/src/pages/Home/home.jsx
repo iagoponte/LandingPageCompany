@@ -1,7 +1,7 @@
 import "./home.css";
 import { Carousel } from "../../components/Carousel/carousel";
 import { HeroSection } from "../../layout/HeroSection/heroSection";
-import { HomePageForm } from "../../components/HomePageForm/homeForm";
+import { HomePageForm } from "../../components/HomePageForm/homePageForm";
 
 export const Home = ({formData, setFormData}) => {
  

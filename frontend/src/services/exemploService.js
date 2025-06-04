@@ -1,1 +1,0 @@
-//chamadas da api do backend, axios.

@@ -3,6 +3,7 @@ import { enviroment } from "../../enviroments/enviroment";
 import { Modal } from "../Modal/modal";
 import { Form } from "../Form/form";
 import { useNavigate } from "react-router-dom";
+import { postHomeForm } from "../../services/HomePageFormService";
 
 
 export const HomePageForm = ({ formData, setFormData }) => {
@@ -37,25 +38,20 @@ const navigate = useNavigate();
     setIsModalOpen(true);
     //inserir, aqui, a lógica de envio do formulário para o backend
     console.log("Form data submitted:", data);
-    try {
-      //trocar a URL abaixo por uma rota específica para captação de leads.
-      const response = await fetch(apiUrl, {
-        method: "POST",
-        headers: {
-          "Content-type": "application/json",
-        },
-        body: JSON.stringify(submissionData),
-      });
-      if (!response.ok) {
-        throw new Error("Falha ao submeter formulário"); //← toastr aqui
+    await postHomeForm(data)
+      .then((response) => {
+        if (response.ok) {
+          console.log("Form submitted succesfully");
+          alert("Formulário enviado com sucesso!");
+        }else {
+          console.error("Error submitting form:", response.statusText);
+          alert("Erro ao enviar o formulário. Por favor, tente novamente.");
+        }
+      }).catch((error) => {
+        console.error("Error submitting form:", error);
+        alert("Erro ao enviar o formulário. Por favor, tente novamente.");
       }
-      const result = await response.json();
-      console.log("form submetido:", result);
-      alert("form submetido com sucesso!"); //← toastr aqui
-    } catch (error) {
-      console.error("Erro ao submeter formulário:", error);
-      alert("Erro ao submeter formulário, tente novamente"); //← toastr aqui
-    };
+    );
   };
 
   const handleProceed = () => {
