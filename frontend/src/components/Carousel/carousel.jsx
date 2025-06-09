@@ -102,7 +102,7 @@ export const Carousel = () => {
       </div>
       {/* Indicadores */}
       <div className="p-8 mt-4 text-center">
-        <p className="text-gray-500 text-sm md:text-base">
+        <p className="text-black text-sm md:text-base">
           {slides[selectedIndex].text}
         </p>
       </div>

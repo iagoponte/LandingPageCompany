@@ -2,6 +2,10 @@ import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 
 export const Form = ({ fields, onSubmit, initialValues }) => {
+  let darkBlue = {
+    background: "#060058",
+  };
+
   const {
     register,
     handleSubmit,
@@ -92,7 +96,7 @@ export const Form = ({ fields, onSubmit, initialValues }) => {
             })}
 
             <div className="flex items-center gap-2">
-                <button type="submit" className="bg-gray-800 text-white mx-auto px-4 py-2 rounded hover:bg-orange-500">
+                <button type="submit" className="bg-[darkBlue] text-white mx-auto px-4 py-2 rounded hover:bg-orange-500">
                     Enviar
                 </button>
             </div>

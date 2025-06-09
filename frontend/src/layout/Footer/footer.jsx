@@ -63,7 +63,7 @@ export const Footer = () => {
       </div>
       <div class="footer-bottom">Copyright &copy; Pulsares Eólica 2025</div> */}
 
-      <footer className="w-full bg-blue-400 text-start">
+      <footer className="w-full text-start" style={{background: "linear-gradient(0deg, #002370,rgba(24, 50, 220, 0.89))"}}>
         <div className="w-full mx-auto p-5 flex flex-wrap box-border">
           {/* <!-- Coluna 1 --> */}
           <div className="w-full md:w-1/8 box-border flex flex-col items-center justify-center">
@@ -78,7 +78,7 @@ export const Footer = () => {
           {/* <!-- Coluna 2 --> */}
           <div className="w-full md:w-4/8 p-5 box-border flex flex-col text-gray-100">
             {/* <h1 className="text-2xl font-bold mb-0">Pulsares</h1> */}
-            <div className="flex flex-col h-full">
+            <div className="flex flex-col h-full justify-center">
             <ul className="space-y-1 text-sm">
               <li className="flex">
                 <i className="mr-1"><MapPinned className="h-5 w-5 opacity-60" /></i>Endereço comercial
@@ -130,7 +130,7 @@ export const Footer = () => {
         </div>
 
         {/* <!-- Rodapé inferior --> */}
-        <div className="text-center text-xs text-gray-100 bg-blue-400 py-2">
+        <div className="text-center text-xs text-gray-100 py-2" >
           Copyright &copy; Pulsares 2025
         </div>
       </footer>

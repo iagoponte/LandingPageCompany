@@ -9,6 +9,7 @@ export const Home = ({ formData, setFormData }) => {
       <HeroSection />
       <div className="max-x-7xl mx-auto flex p-10">
         <div className=" p-10 w-full flex flex-col items-center py-4 box-border">
+          <h3 className="text-2xl md:text-3xl pb-10" style={{color:"oklch(0.33 0.17 262.3)"}}>Manutenção <strong>inteligente</strong> e planejada</h3>
           <Carousel />
         </div>
       </div>

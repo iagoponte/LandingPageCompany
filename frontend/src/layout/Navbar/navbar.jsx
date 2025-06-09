@@ -3,7 +3,7 @@ import logoPulsares from "../../assets/logoPulsares.webp";
 
 export const Navbar = () => {
   return (
-    <nav className="w-full bg-blue-500 p-4">
+    <nav className="w-full p-4" style={{background: "linear-gradient(180deg, #002370,rgba(24, 50, 220, 0.89))"}}>
       <input type="checkbox" id="nav-check" className="hidden peer" />
 
       <div className="flex justify-between items-center">
