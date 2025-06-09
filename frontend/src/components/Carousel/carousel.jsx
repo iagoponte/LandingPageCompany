@@ -34,19 +34,19 @@ export const Carousel = () => {
   const slides = [
     {
       img: PitchPulsares00,
-      text: "01Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+      text: "Esta imagem apresenta uma solução de monitoramento de turbinas eólicas em três etapas. Começa com a instalação de sensores para coleta de dados, que são processados por uma plataforma com backend e frontend para realizar uma análise de vibração. As informações são então enviadas a um técnico, que as utiliza para a manutenção."
     },
     {
       img: PitchPulsares01,
-      text: "02Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+      text: "Aqui, a arquitetura da plataforma é detalhada, mostrando como os dados dos sensores passam por um pipeline de ETL com Apache Airflow, são armazenados em PostgreSQL e acessados via uma API em FastAPI. A solução também utiliza MLflow para gerenciar modelos de machine learning e MINIO como repositório de arquivos."
     },
     {
       img: PitchPulsares02,
-      text: "03Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+      text: "Nesta visualização, o foco está na interface do usuário, onde a simples análise de vibração é substituída por um dashboard completo. A imagem exibe uma colagem de múltiplos gráficos, tabelas e indicadores, demonstrando a capacidade da plataforma de oferecer uma análise visual rica e detalhada para um monitoramento aprofundado."
     },
     {
       img: PitchPulsares03,
-      text: "04Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "
+      text: "A imagem final completa o ciclo ao introduzir um laço de feedback. As análises do engenheiro são reintroduzidas no sistema para treinar e aprimorar continuamente os modelos de machine learning (MLflow), transformando a ferramenta em um sistema inteligente e adaptativo que aprende com o uso."
     }
   ]
 

@@ -4,6 +4,7 @@ import { Navbar } from '../layout/Navbar/navbar';
 import { Footer } from '../layout/Footer/footer';
 import { ContactUs } from '../pages/ContactUs/contactUs';
 import { useState } from 'react';
+import { Services } from '../pages/Services/services';
 
 export const Router = () => {
       const [formData, setFormData] = useState({ name: '', email: '' });
@@ -14,6 +15,7 @@ export const Router = () => {
         <Routes>
             <Route path='/' element={<Home formData={formData} setFormData={setFormData}/>} />
             <Route path='/contact_us' element={<ContactUs formData={formData}/>} />
+            <Route path='/services' element={<Services/>} />
         </Routes>
         <Footer/>
     </BrowserRouter>

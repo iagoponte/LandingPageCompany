@@ -26,7 +26,7 @@ export const Navbar = () => {
           <a href="#" className="text-white hover:text-orange-500">
             Empresa
           </a>
-          <a href="#" className="text-white hover:text-orange-500">
+          <a href="/services" className="text-white hover:text-orange-500">
             Serviços
           </a>
         </div>
