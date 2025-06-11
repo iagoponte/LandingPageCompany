@@ -61,8 +61,7 @@ export const Carousel = () => {
 
   return (
     
-    <div className="relative w-full max-w-3xl">
-      {/* Carrossel */}
+    <div className="relative w-full">
       <div
         className="embla overflow-hidden rounded-xl"
         ref={emblaRef}
@@ -75,7 +74,7 @@ export const Carousel = () => {
                 className="embla__slide min-w-full align-items-center flex-shrink-0 backdrop-blur-md p-2"
               >
                 <img
-                  className="w-[720px] h-auto rounded-2xl object-fit-fill"
+                  className="w-auto h-[180px] sm:h-[300px] md:h-[480px] lg:h-[700px] rounded-2xl object-contain mx-auto"
                   src={slide.img}
                   alt={`Slide ${index + 1}`}
                 />
@@ -89,19 +88,19 @@ export const Carousel = () => {
         onClick={scrollPrev}
         className="py-0 mb-2 rounded-full transition"
       >
-        <ArrowLeft className="hover:py-1"/>
+        <ArrowLeft className="transition-scale duration-250 ease-in-out hover:scale-140"/>
       </button>
 
       <button
         onClick={scrollNext}
         className="px-4 py-0 mb-2 rounded-full transition"
       >
-        <ArrowRight className="hover:py-1"/>
+        <ArrowRight className="transition-scale duration-250 ease-in-out hover:scale-140"/>
       </button>
         </div>
       </div>
       {/* Indicadores */}
-      <div className="p-8 mt-4 text-center">
+      <div className="mt-4 text-center">
         <p className="text-black text-sm md:text-base">
           {slides[selectedIndex].text}
         </p>

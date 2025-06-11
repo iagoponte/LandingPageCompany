@@ -9,7 +9,6 @@ import { postHomeForm } from "../../services/HomePageFormService";
 export const HomePageForm = ({ formData, setFormData }) => {
 const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const apiUrl = `${enviroment.apiUrl}/contact`;
 
   const homePageFormFields = [
     {
@@ -35,15 +34,14 @@ const navigate = useNavigate();
 
   const handleSubmit = async (data) => {
     setFormData(data);
-    setIsModalOpen(true);
-    //inserir, aqui, a lógica de envio do formulário para o backend
     console.log("Form data submitted:", data);
     await postHomeForm(data)
       .then((response) => {
         if (response.ok) {
           console.log("Form submitted succesfully");
           alert("Formulário enviado com sucesso!");
-        }else {
+          setIsModalOpen(true);
+        } else {
           console.error("Error submitting form:", response.statusText);
           alert("Erro ao enviar o formulário. Por favor, tente novamente.");
         }

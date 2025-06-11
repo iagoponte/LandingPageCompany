@@ -71,8 +71,8 @@ export const Footer = () => {
               <a href="/"><img src={logoPulsares} alt="logo" className="h-auto w-60 align-center"></img></a>
             </div>
             <div className="flex gap-1 mb-2">
-              <a href="https://www.instagram.com/pulsar.es/"><Instagram className="h-5 w-5 text-gray-100 hover:text-orange-500"/></a>
-              <a href="https://www.linkedin.com/company/pulsares-engenharia"><Linkedin className="h-5 w-5 text-gray-100 hover:text-orange-500"/></a>
+              <a href="https://www.instagram.com/pulsar.es/"><Instagram className="h-5 w-5 text-gray-100 transition-text duration-350 ease-in-out hover:text-orange-500"/></a>
+              <a href="https://www.linkedin.com/company/pulsares-engenharia"><Linkedin className="h-5 w-5 text-gray-100 transition-text duration-350 ease-in-out hover:text-orange-500"/></a>
             </div>
           </div>
           {/* <!-- Coluna 2 --> */}
@@ -86,13 +86,13 @@ export const Footer = () => {
               <li className="flex items-start group mt-2 mb-2">
                 <i className="mr-1"><Phone className="h-5 w-5 opacity-60 mt-2"/></i>
                 <div className="flex flex-col">
-                  <span><strong>CEO (Gil Palácio):</strong> <a href="tel:+5585999666948" className="hover:text-orange-500 transition-colors">+55 (85) 99966-6948</a></span>
-                  <span><strong>COO (Mário Alves):</strong> <a href="tel:+3580465456808" className="hover:text-orange-500 transition-colors">+358 046 5456808</a></span>
+                  <span><strong>CEO (Gil Palácio):</strong> <a href="tel:+5585999666948" className="transition-text duration-350 ease-in-out hover:text-orange-500 transition-colors">+55 (85) 99966-6948</a></span>
+                  <span><strong>COO (Mário Alves):</strong> <a href="tel:+3580465456808" className="transition-text duration-350 ease-in-out hover:text-orange-500 transition-colors">+358 046 5456808</a></span>
                 </div>
               </li>
               <li className="flex">
                 <i className="mr-1"><MailPlus className="h-5 w-5  opacity-60" /></i>
-                <a href="mailto:spinoffvibracao@gmail.com" className="hover:text-orange-500 transition-colors">
+                <a href="mailto:spinoffvibracao@gmail.com" className="transition-text duration-350 ease-in-out hover:text-orange-500 transition-colors">
                 spinoffvibracao@gmail.com
               </a>
               </li>
@@ -106,22 +106,22 @@ export const Footer = () => {
             <div className="h-[3px] w-20 bg-orange-500 mb-2"></div>
             <ul className="space-y-1 text-sm">
               <li>
-                <a href="/" className="hover:text-orange-500 transition-colors">
+                <a href="/" className="transition-text duration-350 ease-in-out hover:text-orange-500 transition-colors">
                   Início
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-orange-500 transition-colors">
+                <a href="#" className="transition-text duration-350 ease-in-out hover:text-orange-500 transition-colors">
                   Contato
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-orange-500 transition-colors">
+                <a href="#" className="transition-text duration-350 ease-in-out hover:text-orange-500 transition-colors">
                   Empresa
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-orange-500 transition-colors">
+                <a href="#" className="transition-text duration-350 ease-in-out hover:text-orange-500 transition-colors">
                   Serviços
                 </a>
               </li>

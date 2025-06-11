@@ -23,7 +23,7 @@ export const Form = ({ fields, onSubmit, initialValues }) => {
   }, [initialValues, reset])
 
    return (
-    <form onSubmit={handleSubmit(onSubmit)} className="shadow text-black p-4 space-y-4">
+    <form onSubmit={handleSubmit(onSubmit)} className="shadow text-black p-4 space-y-4 rounded-lg">
             {fields.map((field) => {
                 // --- Lógica Condicional ---
                 let isVisible = true; // Por padrão, o campo é visível
@@ -96,7 +96,7 @@ export const Form = ({ fields, onSubmit, initialValues }) => {
             })}
 
             <div className="flex items-center gap-2">
-                <button type="submit" className="bg-[darkBlue] text-white mx-auto px-4 py-2 rounded-full hover:bg-orange-500">
+                <button type="submit" className="bg-[darkBlue] text-white mx-auto px-4 py-2 rounded-full transition-background duration-200 ease-in-out hover:bg-orange-500">
                     Enviar
                 </button>
             </div>

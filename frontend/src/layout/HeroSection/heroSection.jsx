@@ -1,14 +1,14 @@
 export const HeroSection = () => {
   return (
-    <div className="relative h-[400px] w-full overflow-hidden">
+    <div className="relative h-[400px] w-full overflow-hidden group">
       <div className="absolute inset-0 z-0">
             <img
             src="https://imagens.ebc.com.br/UJn45u4_qw25zakjx5RHQVvLWB4=/1170x700/smart/https://agenciabrasil.ebc.com.br/sites/default/files/thumbnails/image/uee-em-icara-ce_14978239956_o.jpg?itok=Km3_X59l"
             alt="Fundo"
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover opacity-100"
             />
-        <div className="absolute inset-0 bg-opacity-40"></div>{" "}
-        {/* camada escura translúcida */}
+            {/*camada escura translúcida*/}
+        <div className="absolute inset-0 bg-black opacity-10 transition-opacity duration-400 ease-in-out group-hover:opacity-5"></div>
       </div>
       <div className="relative z-10 flex items-center justify-center flex-col h-full">
         <h1 className="text-4xl md:text-6xl font-bold text-center" style={{color:"oklch(0.97 0.02 60.25)"}}> Pulsares </h1>

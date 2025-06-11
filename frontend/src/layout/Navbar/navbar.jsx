@@ -17,16 +17,16 @@ export const Navbar = () => {
 
         {/* Links (visíveis em telas médias para cima) */}
         <div className="hidden md:flex space-x-6 items-center">
-          <a href="/" className="text-white hover:text-orange-500">
+          <a href="/" className="text-white transition-text duration-350 ease-in-out hover:text-orange-500">
             Início
           </a>
-          <a href="/contact_us" className="text-white hover:text-orange-500">
+          <a href="/contact_us" className="text-white transition-text duration-350 ease-in-out  hover:text-orange-500">
             Contato
           </a>
-          <a href="#" className="text-white hover:text-orange-500">
+          <a href="#" className="text-white transition-text duration-350 ease-in-out  hover:text-orange-500">
             Empresa
           </a>
-          <a href="/services" className="text-white hover:text-orange-500">
+          <a href="/services" className="text-white transition-text duration-350 ease-in-out  hover:text-orange-500">
             Serviços
           </a>
         </div>
@@ -43,14 +43,17 @@ export const Navbar = () => {
 
       {/* Links para mobile */}
       <div className="peer-checked:max-h-screen max-h-0 overflow-hidden transition-all duration-300 md:hidden flex flex-col mt-4 space-y-2">
-        <a href="/" className="text-white hover:text-orange-500">
-          Home
+        <a href="/" className="text-white transition-text duration-350 ease-in-out hover:text-orange-500">
+          Início
         </a>
-        <a href="/contact_us" className="text-white hover:text-orange-500">
+        <a href="/contact_us" className="text-white transition-text duration-350 ease-in-out  hover:text-orange-500">
           Contato
         </a>
-        <a href="#" className="text-white hover:text-orange-500">
-          Sobre nós
+        <a href="#" className="text-white transition-text duration-350 ease-in-out  hover:text-orange-500">
+          Empresa
+        </a>
+        <a href="#" className="text-white transition-text duration-350 ease-in-out  hover:text-orange-500">
+          Serviços
         </a>
       </div>
     </nav>
