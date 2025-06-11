@@ -3,17 +3,30 @@ const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 
 exports.createNewContact = async (req, res) => {
-  const { name, email, phone, position, windTurbineCount, technicalVisitAvailability } = req.body;
+  const { name, email, phone, position, businessType, technicalVisitAvailability, lgpdConsent } = req.body;
 
   try {
+    if(!name || !email){
+      return res.status(400).json({ error: "Name e email são obrigatórios." });
+    }
+
+    const isExistingEmail = await contacts.findUnique({
+      where: { email },
+    });
+
+    if (isExistingEmail) {
+      return res.status(400).json({ error: "Email já cadastrado." });
+    }
+
     const newForm = await contacts.create({
       data: {
         name,
         email,
-        phone,
-        position,
-        windTurbineCount,
-        technicalVisitAvailability,
+        phone:  phone || null,
+        position: position || null,
+        businessType: businessType || null,
+        technicalVisitAvailability: technicalVisitAvailability || null,
+        lgpdConsent: lgpdConsent || false
       },
     });
 

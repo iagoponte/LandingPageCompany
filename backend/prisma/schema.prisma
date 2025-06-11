@@ -13,18 +13,14 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-enum TechnicalVisitAvailability {
-  NEXT_WEEK
-  NEXT_15_DAYS
-}
-
 model contacts {
-  id                        String                    @id @default(cuid())
-  name                      String                    @db.VarChar(255)
-  email                     String                    @unique
-  phone                     String
-  position                  String
-  windTurbineCount          Int
-  technicalVisitAvailability TechnicalVisitAvailability
-  createdAt                 DateTime                  @default(now())
+  id                         String   @id @default(cuid())
+  name                       String   @db.VarChar(255)
+  email                      String   @unique
+  phone                      String?
+  position                   String?
+  lgpdConsent                Boolean?
+  technicalVisitAvailability String?
+  businessType               String?
+  createdAt                  DateTime @default(now())
 }
