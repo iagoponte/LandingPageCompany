@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { enviroment } from "../../enviroments/enviroment";
 import { Modal } from "../Modal/modal";
 import { Form } from "../Form/form";
 import { useNavigate } from "react-router-dom";
@@ -7,8 +6,9 @@ import { postHomeForm } from "../../services/HomePageFormService";
 
 
 export const HomePageForm = ({ formData, setFormData }) => {
-const navigate = useNavigate();
+  const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
+
 
   const homePageFormFields = [
     {
@@ -34,7 +34,8 @@ const navigate = useNavigate();
 
   const handleSubmit = async (data) => {
     setFormData(data);
-    console.log("Form data submitted:", data);
+    // console.log("Form data submitted:", data);
+    console.log("Dados enviados à API:", JSON.stringify(data));
     await postHomeForm(data)
       .then((response) => {
         if (response.ok) {

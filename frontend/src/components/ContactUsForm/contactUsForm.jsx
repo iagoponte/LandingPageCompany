@@ -6,6 +6,7 @@ export const ContactUsForm = ({ formData }) => {
   //usar o modal para ser redirecionado o link do LGPD, o modal deve contar informações sobre o termo de consentimento do uso do site, fazer ele rolável.
   // const navigate = useNavigate();
   // const [isModalOpen, setIsModalOpen] = useState(false);
+  
 
     const initialFormData = {
         name: '',         // Corresponde a contactFields[0].name

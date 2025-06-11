@@ -1,7 +1,8 @@
 import { enviroment } from "../enviroments/enviroment";
 
 export const postHomeForm = async (data) => {
-    const apiUrl = `${enviroment.apiUrl}/xxxx`;
+    const apiUrl = `${enviroment.apiUrl}/contact`;
+    console.log("API URL:", apiUrl);
 
       const response = await fetch(apiUrl, {
         method: "POST",
