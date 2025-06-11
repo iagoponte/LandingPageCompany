@@ -96,7 +96,7 @@ export const Form = ({ fields, onSubmit, initialValues }) => {
             })}
 
             <div className="flex items-center gap-2">
-                <button type="submit" className="bg-[darkBlue] text-white mx-auto px-4 py-2 rounded hover:bg-orange-500">
+                <button type="submit" className="bg-[darkBlue] text-white mx-auto px-4 py-2 rounded-full hover:bg-orange-500">
                     Enviar
                 </button>
             </div>
