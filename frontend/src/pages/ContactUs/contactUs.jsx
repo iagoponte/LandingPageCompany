@@ -15,7 +15,7 @@ export const ContactUs = ({ formData }) => {
         </h3>
       </div>
       <div className="p-4 max-w-md mx-auto py-2 mb-10">
-        <h1 className="text-2x1 font-bold mb-4 text-center">
+        <h1 className="text-2x1 font-bold mb-4 text-center" style={{color:"oklch(0.33 0.17 262.3)"}}>
           Suas informações para contato
         </h1>
         <ContactUsForm formData={formData} />

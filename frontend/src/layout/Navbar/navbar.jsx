@@ -1,4 +1,4 @@
-import logoPulsares from "../../assets/logoPulsares.webp";
+import logoPulsares from "../../assets/logoPulsares3.webp";
 
 
 export const Navbar = () => {

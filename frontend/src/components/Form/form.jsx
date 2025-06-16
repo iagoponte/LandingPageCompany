@@ -39,7 +39,7 @@ export const Form = ({ fields, onSubmit, initialValues }) => {
                 return (
                     // Adiciona a classe 'hidden' se não for visível
                     <div key={field.name} className={`mb-4 ${!isVisible ? 'hidden' : ''}`}>
-                        <label className="block mb-2 font-semibold">{field.label}</label>
+                        <label className="block mb-2 font-semibold" style={{color:"oklch(0.21 0.1 261.67)"}}>{field.label}</label>
 
                         {field.type === "radio" ? (
                             <div className="flex flex-col gap-2">

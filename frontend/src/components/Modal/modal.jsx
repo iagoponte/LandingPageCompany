@@ -1,11 +1,10 @@
-import React from 'react';
 
 export const Modal = ({ isOpen, onClose, onProceed, message, proceedText }) => {
   if (!isOpen) return null;
 
   return (
     <div className="fixed inset-0 bg-opacity-50 flex items-center justify-center mb-[200px] p-4 z-50">
-      <div className="bg-white p-6 sm:p-8 rounded-lg shadow-xl w-full max-w-md text-center">
+      <div className="bg-white rounded-lg shadow-xl w-full max-w-2xl max-h-[90vh] overflow-y-auto p-6">
         <p className="text-lg text-gray-700 mb-6">{message}</p>
         <div className="flex flex-col sm:flex-row justify-center space-y-3 sm:space-y-0 sm:space-x-3">
           <button
