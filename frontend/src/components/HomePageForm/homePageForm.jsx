@@ -33,10 +33,13 @@ export const HomePageForm = ({ formData, setFormData }) => {
   ];
 
   const handleSubmit = async (data) => {
-    setFormData(data);
+    const submissionData = {...data, 
+      isFormComplete: false
+    };
+    setFormData(submissionData);
     // console.log("Form data submitted:", data);
-    console.log("Dados enviados à API:", JSON.stringify(data));
-    await postHomeForm(data)
+    console.log("Dados enviados à API:", JSON.stringify(submissionData));
+    await postHomeForm(submissionData)
       .then((response) => {
         if (response.ok) {
           console.log("Form submitted succesfully");
