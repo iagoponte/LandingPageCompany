@@ -294,8 +294,10 @@ export const ContactUsForm = ({ formData }) => {
     const submissionData = {
       ...data,
       businessType: finalBusinessType,
+      lgpdConsent: data.lgpdConsent === "true" ? true : false, // Garantindo que lgpdConsent seja booleano
       lgpdConsentTimestamp:
-        data.lgpdConsent === "true" ? new Date().toISOString() : null,
+        data.lgpdConsent ? new Date().toISOString() : null,
+      isFormComplete: true, //verificação da flag do formulário completo
     };
     //talvez seja necessário remover o envio para o back do lgpdConsent (pois somente será aceito o form que está com o checkbox marcado).
     delete submissionData.businessTypeOther; //remover o campo de texto adicional, pois não é necessário no back.
