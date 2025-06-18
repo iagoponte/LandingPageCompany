@@ -1,9 +1,13 @@
+import HeroSectionImg from '../../assets/HeroSectionImg.webp';
+
 export const HeroSection = () => {
   return (
     <div className="relative h-[400px] w-full overflow-hidden group">
       <div className="absolute inset-0 z-0">
             <img
-            src="https://imagens.ebc.com.br/UJn45u4_qw25zakjx5RHQVvLWB4=/1170x700/smart/https://agenciabrasil.ebc.com.br/sites/default/files/thumbnails/image/uee-em-icara-ce_14978239956_o.jpg?itok=Km3_X59l"
+            loaging="lazy"
+            decoding='async'
+            src= {HeroSectionImg}
             alt="Fundo"
             className="w-full h-full object-cover opacity-100"
             />

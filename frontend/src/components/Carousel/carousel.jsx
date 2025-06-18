@@ -1,10 +1,10 @@
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useEffect, useState } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import PitchPulsares00 from "../../assets/imagesFluxograma/PitchPulsares00.png";
-import PitchPulsares01 from "../../assets/imagesFluxograma/PitchPulsares01.png";
-import PitchPulsares02 from "../../assets/imagesFluxograma/PitchPulsares02.png";
-import PitchPulsares03 from "../../assets/imagesFluxograma/PitchPulsares03.png";
+import PitchPulsares00 from "../../assets/imagesFluxograma/PitchPulsares00.webp";
+import PitchPulsares01 from "../../assets/imagesFluxograma/PitchPulsares01.webp";
+import PitchPulsares02 from "../../assets/imagesFluxograma/PitchPulsares02.webp";
+import PitchPulsares03 from "../../assets/imagesFluxograma/PitchPulsares03.webp";
 
 
 export const Carousel = () => {
@@ -87,6 +87,7 @@ export const Carousel = () => {
           <button
         onClick={scrollPrev}
         className="py-0 mb-2 rounded-full transition"
+        aria-label='slide anterior'
       >
         <ArrowLeft className="transition-scale duration-250 ease-in-out hover:scale-140"/>
       </button>
@@ -94,6 +95,7 @@ export const Carousel = () => {
       <button
         onClick={scrollNext}
         className="px-4 py-0 mb-2 rounded-full transition"
+        aria-label='próximo slide'
       >
         <ArrowRight className="transition-scale duration-250 ease-in-out hover:scale-140"/>
       </button>
