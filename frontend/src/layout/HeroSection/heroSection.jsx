@@ -5,7 +5,6 @@ export const HeroSection = () => {
     <div className="relative h-[400px] w-full overflow-hidden group">
       <div className="absolute inset-0 z-0">
             <img
-            loaging="lazy"
             decoding='async'
             src= {HeroSectionImg}
             alt="Fundo"
@@ -16,7 +15,7 @@ export const HeroSection = () => {
       </div>
       <div className="relative z-10 flex items-center justify-center flex-col h-full">
         <h1 className="text-4xl md:text-6xl font-bold text-center" style={{color:"oklch(0.97 0.02 60.25)"}}> Pulsares </h1>
-        <h3 className="text-xl md:text-2xl text-center" style={{color:"oklch(0.97 0.02 60.25)"}}><i>Inteligência a favor do movimento</i></h3>
+        <h2 className="text-xl md:text-2xl text-center" style={{color:"oklch(0.97 0.02 60.25)"}}><i>Inteligência a favor do movimento</i></h2>
       </div>
     </div>
   );

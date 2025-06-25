@@ -3,12 +3,11 @@ import { Modal } from "../Modal/modal";
 import { Form } from "../Form/form";
 import { useNavigate } from "react-router-dom";
 import { postHomeForm } from "../../services/HomePageFormService";
-
+import { toast } from "react-toastify";
 
 export const HomePageForm = ({ formData, setFormData }) => {
   const navigate = useNavigate();
   const [isModalOpen, setIsModalOpen] = useState(false);
-
 
   const homePageFormFields = [
     {
@@ -24,60 +23,80 @@ export const HomePageForm = ({ formData, setFormData }) => {
       type: "email",
       validation: {
         required: "Email é requerido",
-          pattern: {
-            value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i,
-              message: "Formato de email inválido"
-          },
+        pattern: {
+          value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i,
+          message: "Formato de email inválido",
+        },
       },
-    }
+    },
   ];
 
   const handleSubmit = async (data) => {
-    const submissionData = {...data, 
-      isFormComplete: false
-    };
+    //lógica do toaster para evitar múltiplos toasts
+    const toastId = "submit-toast";
+    if (!toast.isActive(toastId)) {
+    toast.loading("Enviando formulário...", {toastId})};
+
+    const submissionData = { ...data, isFormComplete: false };
     setFormData(submissionData);
     // console.log("Form data submitted:", data);
     console.log("Dados enviados à API:", JSON.stringify(submissionData));
     await postHomeForm(submissionData)
       .then((response) => {
         if (response.ok) {
+          toast.update(toastId, {
+            render: "Formulário enviado com sucesso!",
+            type: "success",
+            isLoading: false,
+            autoClose: 4000,
+          });
           console.log("Form submitted succesfully");
-          alert("Formulário enviado com sucesso!");
           setIsModalOpen(true);
         } else {
+          toast.update(toastId, {
+            render: "Erro ao enviar o formulário.",
+            type: "error",
+            isLoading: false,
+            autoClose: 4000,
+          })
           console.error("Error submitting form:", response.statusText);
-          alert("Erro ao enviar o formulário. Por favor, tente novamente.");
         }
-      }).catch((error) => {
+      })
+      .catch((error) => {
+        toast.update(toastId, {
+          render: "Erro inesperado ao enviar o formulário.",
+          type: "error",
+          isLoading: false,
+          autoClose: 4000,
+        });
         console.error("Error submitting form:", error);
-        alert("Erro ao enviar o formulário. Por favor, tente novamente.");
-      }
-    );
+      });
   };
 
   const handleProceed = () => {
     setIsModalOpen(false);
-    navigate('/contact_us');
+    navigate("/contact_us");
   };
 
   const handleCloseModal = () => {
     setIsModalOpen(false);
   };
-   return (
+  return (
     <>
-        <div className="p-4 max-w-md mx-auto py-2 mb-10">
-            <Form 
-            fields={homePageFormFields}
-            initialValues={formData}
-            onSubmit={handleSubmit} />
-          </div>
-          <Modal 
-            isOpen={isModalOpen} 
-            onClose={handleCloseModal} 
-            onProceed={handleProceed} 
-            message="Você está prestes a ser redirecionado para a página de contato. Deseja continuar?" 
-            proceedText="Continuar" />
-        </>
-   );
+      <div className="p-4 max-w-md mx-auto py-2 mb-10">
+        <Form
+          fields={homePageFormFields}
+          initialValues={formData}
+          onSubmit={handleSubmit}
+        />
+      </div>
+      <Modal
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        onProceed={handleProceed}
+        message="Você está prestes a ser redirecionado para a página de contato. Deseja continuar?"
+        proceedText="Continuar"
+      />
+    </>
+  );
 };

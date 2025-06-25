@@ -2,6 +2,7 @@ import { postContactForm } from "../../services/ContactPageFormService";
 import { useState } from "react";
 import { Form } from "../Form/form";
 import { LgpdModal } from "../LgpdModal/lgpdModal";
+import { toast } from "react-toastify";
 
 export const ContactUsForm = ({ formData }) => {
   
@@ -285,7 +286,7 @@ export const ContactUsForm = ({ formData }) => {
     //lógica para tratar o campo de texto OUTROS do businessType.
     let finalBusinessType = data.businessType;
     if (!data.lgpdConsent) {
-      alert("É necessário aceitar a Política de Privacidade.");
+      toast.error("É necessário aceitar a Política de Privacidade.");
       return; // Interrompe o envio se não houver consentimento
     }
     if (data.businessType === "OTHER") {
@@ -295,26 +296,46 @@ export const ContactUsForm = ({ formData }) => {
       ...data,
       businessType: finalBusinessType,
       lgpdConsent: data.lgpdConsent === "true" ? true : false, // Garantindo que lgpdConsent seja booleano
-      // lgpdConsentTimestamp:
-      //   data.lgpdConsent ? new Date().toISOString() : null,
       isFormComplete: true, //verificação da flag do formulário completo
     };
     //talvez seja necessário remover o envio para o back do lgpdConsent (pois somente será aceito o form que está com o checkbox marcado).
     delete submissionData.businessTypeOther; //remover o campo de texto adicional, pois não é necessário no back.
     console.log("form data:", submissionData);
 
+    //lógica do toaster para evitar múltiplos toasts
+    const toastId = "submit-toast";
+    if (!toast.isActive(toastId)) {
+    toast.loading("Enviando formulário...", {toastId})};
+
     //estruturando requisição para o back end ↓
     await postContactForm(submissionData)
       .then((response) => {
         if (response.ok) {
-          alert("Formulário enviado com sucesso!");
+          toast.update(toastId, {
+            render: "Formulário enviado com sucesso!",
+            type: "success",
+            isLoading: false,
+            autoClose: 4000,
+          });
+          console.log("Formulário enviado com sucesso!");
         } else {
-          alert("Erro ao enviar o formulário, tente novamente.");
+          toast.update(toastId, {
+            render: "Erro ao enviar o formulário.",
+            type: "error",
+            isLoading: false,
+            autoClose: 4000,
+          });
+          console.log("Erro ao enviar o formulário, tente novamente.");
         }
       })
       .catch((error) => {
+        toast.update(toastId, {
+          render: "Erro inesperado ao enviar o formulário.",
+          type: "error",
+          isLoading: false,
+          autoClose: 4000,
+        });
         console.error("Erro ao enviar o formulário:", error);
-        alert("Erro ao enviar o formulário, tente novamente.");
       });
   };
 
