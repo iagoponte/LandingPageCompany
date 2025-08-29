@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "contacts" ADD COLUMN     "isFormComplete" BOOLEAN DEFAULT false,
+ADD COLUMN     "updatedAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP;

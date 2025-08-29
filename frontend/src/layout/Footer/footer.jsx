@@ -1,7 +1,7 @@
 import React from "react";
 import "./footer.css";
 import { MapPinned, Phone, MailPlus, Instagram, Linkedin } from "lucide-react";
-import logoPulsares from "../../assets/logoPulsares3.webp";
+import logo from "../../assets/logo3.webp";
 
 
 export const Footer = () => {
@@ -12,16 +12,16 @@ export const Footer = () => {
           {/* <!-- Coluna 1 --> */}
           <div className="w-full md:w-1/8 box-border flex flex-col items-center justify-center">
             <div className="flex flex-col">
-              <a href="/"><img src={logoPulsares} alt="logo" className="h-auto w-50 align-center"></img></a>
+              <a href="/"><img src={logo} alt="logo" className="h-auto w-50 align-center"></img></a>
             </div>
             <div className="flex gap-3 mt-2 mb-2">
-              <a href="https://www.instagram.com/pulsar.es/" aria-label='instagram empresa' ><Instagram className="h-7 w-7 text-gray-100 transition-text duration-350 ease-in-out hover:text-orange-500"/></a>
-              <a href="https://www.linkedin.com/company/pulsares-engenharia" aria-label='linkedin empresa' ><Linkedin className="h-7 w-7 text-gray-100 transition-text duration-350 ease-in-out hover:text-orange-500"/></a>
+              <a href="https://www.instagram.com" aria-label='instagram empresa' ><Instagram className="h-7 w-7 text-gray-100 transition-text duration-350 ease-in-out hover:text-orange-500"/></a>
+              <a href="https://www.linkedin.com" aria-label='linkedin empresa' ><Linkedin className="h-7 w-7 text-gray-100 transition-text duration-350 ease-in-out hover:text-orange-500"/></a>
             </div>
           </div>
           {/* <!-- Coluna 2 --> */}
           <div className="w-full md:w-4/8 p-5 box-border flex flex-col text-gray-100">
-            {/* <h1 className="text-2xl font-bold mb-0">Pulsares</h1> */}
+            {/* <h1 className="text-2xl font-bold mb-0"></h1> */}
             <div className="flex flex-col h-full ">
             <h4 className="text-xl font-semibold mb-2">Sobre nós</h4>
             <div className="h-[3px] w-20 bg-orange-500 mb-2"></div>
@@ -32,14 +32,14 @@ export const Footer = () => {
               <li className="flex items-start group mt-2 mb-2">
                 <i className="mr-1"><Phone className="h-5 w-5 opacity-60 mt-2"/></i>
                 <div className="flex flex-col">
-                  <span><strong>CEO (Gil Palácio):</strong> <a href="tel:+5585999666948" className="transition-text duration-350 ease-in-out hover:text-orange-500 transition-colors">+55 (85) 99966-6948</a></span>
-                  <span><strong>COO (Mário Alves):</strong> <a href="tel:+3580465456808" className="transition-text duration-350 ease-in-out hover:text-orange-500 transition-colors">+358 046 5456808</a></span>
+                  <span><strong>CEO (?????):</strong> <a href="tel:+-----------" className="transition-text duration-350 ease-in-out hover:text-orange-500 transition-colors">+55 (85) --------</a></span>
+                  <span><strong>COO (?????):</strong> <a href="tel:+-----------" className="transition-text duration-350 ease-in-out hover:text-orange-500 transition-colors">+358 046 --------</a></span>
                 </div>
               </li>
               <li className="flex">
                 <i className="mr-1"><MailPlus className="h-5 w-5  opacity-60" /></i>
-                <a href="mailto:spinoffvibracao@gmail.com" className="transition-text duration-350 ease-in-out hover:text-orange-500 transition-colors">
-                spinoffvibracao@gmail.com
+                <a href="mailto:emilto@gmail.com" className="transition-text duration-350 ease-in-out hover:text-orange-500 transition-colors">
+                emilto@gmail.com
               </a>
               </li>
             </ul>
@@ -77,7 +77,7 @@ export const Footer = () => {
 
         {/* <!-- Rodapé inferior --> */}
         <div className="text-center text-xs text-gray-100 py-2" >
-          Copyright &copy; Pulsares 2025
+          Copyright &copy; Empresa 2025
         </div>
       </footer>
     </>

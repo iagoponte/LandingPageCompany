@@ -8,7 +8,7 @@ export const ContactUs = ({ formData }) => {
       <div className="relative z-10 flex items-center justify-center flex-col h-full py-10">
         <h1 className="text-orange-500 text-4xl md:text-6xl font-bold text-center">
           {" "}
-          Pulsares{" "}
+          Empresa{" "}
         </h1>
         <h3 className="text-orange-400 text-xl md:text-2xl text-center">
           Ideações Eólicas

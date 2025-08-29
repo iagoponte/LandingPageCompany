@@ -1,4 +1,4 @@
-import logoPulsares from "../../assets/logoPulsares3.webp";
+import logo from "../../assets/logo3.webp";
 
 
 export const Navbar = () => {
@@ -10,9 +10,9 @@ export const Navbar = () => {
         {/* Logo */}
         <div className="flex items-center space-x-2">
           <a href="/" className="">
-            <img className="h-auto w-10" src={logoPulsares} alt="logo_empresa" />
+            <img className="h-auto w-10" src={logo} alt="logo_empresa" />
           </a>
-          <a href="/"><span className="text-white text-xl font-semibold">Pulsares</span></a>
+          <a href="/"><span className="text-white text-xl font-semibold">Empresa</span></a>
         </div>
 
         {/* Links (visíveis em telas médias para cima) */}

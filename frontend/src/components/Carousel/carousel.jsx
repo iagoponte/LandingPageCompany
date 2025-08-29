@@ -1,10 +1,10 @@
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback, useEffect, useState } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import PitchPulsares00 from "../../assets/imagesFluxograma/PitchPulsares00.webp";
-import PitchPulsares01 from "../../assets/imagesFluxograma/PitchPulsares01.webp";
-import PitchPulsares02 from "../../assets/imagesFluxograma/PitchPulsares02.webp";
-import PitchPulsares03 from "../../assets/imagesFluxograma/PitchPulsares03.webp";
+import Pitch00 from "../../assets/imagesFluxograma/Pitch00.webp";
+import Pitch01 from "../../assets/imagesFluxograma/Pitch01.webp";
+import Pitch02 from "../../assets/imagesFluxograma/Pitch02.webp";
+import Pitch03 from "../../assets/imagesFluxograma/Pitch03.webp";
 
 
 export const Carousel = () => {
@@ -33,20 +33,20 @@ export const Carousel = () => {
 
   const slides = [
     {
-      img: PitchPulsares00,
-      text: "Esta imagem apresenta uma solução de monitoramento de turbinas eólicas em três etapas. Começa com a instalação de sensores para coleta de dados, que são processados por uma plataforma com backend e frontend para realizar uma análise de vibração. As informações são então enviadas a um técnico, que as utiliza para a manutenção."
+      img: Pitch00,
+      text: "texto de explicação referente ao slide 01."
     },
     {
-      img: PitchPulsares01,
-      text: "Aqui, a arquitetura da plataforma é detalhada, mostrando como os dados dos sensores passam por um pipeline de ETL com Apache Airflow, são armazenados em PostgreSQL e acessados via uma API em FastAPI. A solução também utiliza MLflow para gerenciar modelos de machine learning e MINIO como repositório de arquivos."
+      img: Pitch01,
+      text: "texto de explicação referente ao slide 02."
     },
     {
-      img: PitchPulsares02,
-      text: "Nesta visualização, o foco está na interface do usuário, onde a simples análise de vibração é substituída por um dashboard completo. A imagem exibe uma colagem de múltiplos gráficos, tabelas e indicadores, demonstrando a capacidade da plataforma de oferecer uma análise visual rica e detalhada para um monitoramento aprofundado."
+      img: Pitch02,
+      text: "texto de explicação referente ao slide 03."
     },
     {
-      img: PitchPulsares03,
-      text: "A imagem final completa o ciclo ao introduzir um laço de feedback. As análises do engenheiro são reintroduzidas no sistema para treinar e aprimorar continuamente os modelos de machine learning (MLflow), transformando a ferramenta em um sistema inteligente e adaptativo que aprende com o uso."
+      img: Pitch03,
+      text: "texto de explicação referente ao slide 04."
     }
   ]
 

@@ -23,4 +23,6 @@ model contacts {
   technicalVisitAvailability String?
   businessType               String?
   createdAt                  DateTime @default(now())
+  updatedAt                  DateTime @default(now())
+  isFormComplete             Boolean? @default(false)
 }
