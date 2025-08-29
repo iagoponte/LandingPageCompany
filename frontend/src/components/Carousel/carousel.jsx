@@ -1,10 +1,11 @@
 import useEmblaCarousel from "embla-carousel-react";
 import { useCallback } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import EolicaImgOne from "../../assets/images/eolicas01.webp";
-import EolicaImgTwo from "../../assets/images/eolicas02.webp";
-import EolicaImgThree from "../../assets/images/eolicas03.webp";
-import EolicaImgFour from "../../assets/images/eolicas04.webp";
+import PitchPulsares00 from "../../assets/imagesFluxograma/PitchPulsares00.svg";
+import PitchPulsares01 from "../../assets/imagesFluxograma/PitchPulsares01.svg";
+import PitchPulsares02 from "../../assets/imagesFluxograma/PitchPulsares02.svg";
+import PitchPulsares03 from "../../assets/imagesFluxograma/PitchPulsares03.svg";
+
 
 export const Carousel = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
@@ -25,38 +26,22 @@ export const Carousel = () => {
   }, [emblaApi]);
 
   return (
-    // <div className="embla overflow-hidden rounded-xl shadow-lg max-w-3xl mx-auto" ref={emblaRef}>
-    //   <div className="embla__container flex">
-    //     <div className="embla__slide min-w-full flex-shrink-0 bg-white/30 backdrop-blur-md p-4">
-    //         <img className="w-full h-100 rounded-2x1 object-cover" src={EolicaImgOne} alt='torres eólicas'></img>
-    //     </div>
-    //     <div className="embla__slide min-w-full flex-shrink-0 bg-white/30 backdrop-blur-md p-4">
-    //         <img className="w-full h-100 rounded-2x1 object-cover" src={EolicaImgTwo} alt='torres eólicas'></img>
-    //     </div>
-    //     <div className="embla__slide min-w-full flex-shrink-0 bg-white/30 backdrop-blur-md p-4">
-    //         <img className="w-full h-100 rounded-2x1 object-cover" src={EolicaImgThree} alt='torres eólicas'></img>
-    //     </div>
-    //     <div className="embla__slide min-w-full flex-shrink-0 bg-white/30 backdrop-blur-md p-4">
-    //         <img className="w-full h-100 rounded-2x1 object-cover" src={EolicaImgFour} alt='torres eólicas'></img>
-    //     </div>
-    //   </div>
-    // </div>
-
-    <div className="relative max-w-3xl mx-auto">
+    
+    <div className="relative w-full max-w-3xl">
       {/* Carrossel */}
       <div
         className="embla overflow-hidden rounded-xl"
         ref={emblaRef}
       >
         <div className="embla__container flex mb-0">
-          {[EolicaImgOne, EolicaImgTwo, EolicaImgThree, EolicaImgFour].map(
+          {[PitchPulsares00, PitchPulsares01, PitchPulsares02, PitchPulsares03].map(
             (img, index) => (
               <div
                 key={index}
                 className="embla__slide min-w-full flex-shrink-0 backdrop-blur-md p-2"
               >
                 <img
-                  className="w-full h-72 rounded-2xl object-cover"
+                  className="w-full h-[400px] rounded-2xl object-fit-fill"
                   src={img}
                   alt={`torres eólicas ${index + 1}`}
                 />
