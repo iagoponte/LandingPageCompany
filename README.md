@@ -1,6 +1,6 @@
-# 🚀 Landing Page Pulsares
+# 🚀 Landing Page Empresa
 
-Landing page desenvolvida para fins comerciais, com o objetivo de promover os serviços da Pulsares e captar potenciais clientes por meio de um formulário de contato inteligente.
+Landing page desenvolvida para fins comerciais, com o objetivo de promover os serviços da Empresa e captar potenciais clientes por meio de um formulário de contato inteligente.
 
 ## 🧱 Stack do Projeto
 
